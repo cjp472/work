@@ -1,0 +1,19 @@
+<!--pages/bianji_fenlei_a/bianji_fenlei_a.wxml-->
+<page>
+
+  <view style='background:url({{img}}) no-repeat center center;background-size:cover' class='box'>
+      <view class='main'>
+        <view class='fs_32 main_t d_flex_cen_cen'>请选择打卡类型</view>
+        <!-- <view class='main_b' bindtap='Popup_show'>  -->
+        <picker bindchange='bindPickerChange' value="{{index}}" range="{{array}}">
+          <view class='main_b d_flex_cen_sb fs_30' >
+            <view>     {{array[index]||'请选择'}}</view>
+            <view>
+              <image src='../../icons/bottm_icon.png' style='width:20rpx;height:18rpx;' />
+        </view>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+</page>

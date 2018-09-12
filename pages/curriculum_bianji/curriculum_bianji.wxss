@@ -1,0 +1,122 @@
+/* pages/Courses_box/Courses_box.wxss */
+page{
+  background-color: #f6f6f6;
+  padding-bottom: 100rpx;
+}
+.footer{
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+  background-color: #fff;
+}
+.footer_r{
+  background-color: #4f62ff;
+  color: #fff;
+}
+.main{
+  flex-wrap: wrap;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  padding-left: 4%;
+}
+.main_i{
+  width: 330rpx;
+  height: 275rpx;
+overflow: hidden;
+background-color: #fff;
+border-radius:15rpx;
+margin: 0 4% 30rpx 0;
+
+}
+.main_title{
+  text-align: center;
+}
+button::after {
+  border: none;
+ 
+}
+button{
+ background-color:#fff;
+}
+
+/**海报**/
+.haibao_view{
+  background-image: url('http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/fenxiang_bg.png');
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 1200rpx;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  z-index: 99999;
+  margin-bottom:120rpx;
+}
+.haibao_icon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 76rpx;
+  height: 76rpx;
+  z-index: 999999;
+}
+.haibao_view_1{
+  width: 100%;
+  padding: 76% 5% 0 5%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.haibao_icon1{
+  width: 128rpx;
+  height: 128rpx;
+}
+.haibao_font1{
+  font-size: 32rpx;
+  color: #161418;
+  margin-bottom: 30rpx;
+}
+.haibao_font2{
+  font-size: 28rpx;
+  color: #161418;
+  text-align: left;
+}
+.haibao_view_2{
+  width: 90%;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 130rpx;
+  left: 5%;
+  display: flex;
+}
+.haibao_view_left{
+  width: 50%;
+  text-align: left;
+  position: fixed;
+  bottom: 130rpx;
+  left: 5%;
+}
+.haibao_view_right{
+  width: 50%;
+  margin-left: 50%;
+  text-align: right;
+  justify-content: baseline;
+}
+.erweima{
+  width: 50%;
+}
+.text_border{
+  border: 2rpx solid #211f23;
+  padding: 0 8rpx;
+  font-size: 38rpx;
+}
+
+
+.but {
+  width: 710rpx;
+  height: 100rpx;
+  color: #fff;
+  left: 20rpx;
+  letter-spacing: 12rpx;
+  border-radius: 12rpx;
+  bottom: 25rpx;
+}

@@ -1,0 +1,75 @@
+<!--pages/luyin_bianji/luyin_bianji.wxml-->
+<page>
+  
+  <view class='content  shadow'>
+    <view class='title_box '>
+      <view class='title_t  d_flex_cen_h  fs_32'>
+        <image src='../../icons/landian.png' style='width:11rpx;height:11rpx;' class='m_r_5' />小标题
+      </view>
+      <view class='title_box_b'>
+        <input class='fs_28' placeholder-class='fs_28' placeholder='请输入小标题' />
+      </view>
+    </view>
+    <view class="text_box m_b_30 {{isExit!=2?'':'displayNone'}}">
+      <textarea maxlength='-1' placeholder='请输入文字介绍' class='fs_30' placeholder-class='fs_30' placeholder-style='color:#666' class='text_css'>
+      </textarea>
+    </view>
+    <view class='fs_32'>
+      <text style='color:#fb484b' class='fs_34'>*</text> 图片（宽高：375*242）
+    </view>
+    <view class='img_box m_b_30 d_flex_cen_cen '>
+      <block wx:for-items="{{imageList_a}}" wx:for-item="image">
+        <view class='img_box_i'>
+         <image class='img_box_img' src='{{image}}'     data-src="{{image}}"   >      </image>
+
+          <image src='../../icons/Close.png' hidden='{{img_show_a}}'  bindtap='guanbi_a'  class='Close'       />
+        </view>
+      </block>
+    </view>
+    <view class='content_but Gradient_color d_flex_cen_cen fs_32' bindtap='chooseImage_a'>添加图片</view>
+  </view>
+  <view class=' confirm Gradient_color d_flex_cen_cen fs_34 ' bindtap='go_fanhui'>
+    保存
+  </view>
+   <!--裁剪-->
+  <view class="top {{isExit!=1?'':'displayNone'}}" bindtap='getImage'>
+   
+     <image src='{{imageSrc}}' class='selectImg'  /> 
+      <canvas canvas-id="myCanvas" style="position:absolute;top:-9999px;left:-9999px;width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;"></canvas>  
+
+  </view>
+
+  <view class="wx-content-info {{isExit==1||isExit==3?'displayNone':''}}" wx:if="{{imageSrc}}">
+
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+      <view class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+        <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx"  bindtap='getImage'></image>
+        <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+          <view class="wx-cropper-view-box">
+           <!-- <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;top:-9999px;left:-9999px;"></canvas>  -->
+            <view wx:if="{{innerAspectRadio>=1}}">
+            <view class="wx-cropper-dashed-h"></view>
+            <view class="wx-cropper-dashed-v"></view>
+            <view class="wx-cropper-line-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+            <view class="wx-cropper-point point-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+            <view class="wx-cropper-point point-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class='getnone' bindtap="getnone">取消</view>
+      <view class='getBtn' bindtap="getImageInfo">确认</view>
+    </view>
+  </view>
+</page>

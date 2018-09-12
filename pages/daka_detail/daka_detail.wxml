@@ -1,0 +1,193 @@
+<!--pages/daka_detail/daka_detail.wxml -->
+<page>
+  
+  <!--海报start 必须打卡后才出现-->
+  <!-- <view class='haibao_view' style="{{haibao_height}}px;" hidden="{{haibao_hidden}}">
+    <image src='../../icons/haibao_close.png' class='haibao_icon' bindtap='haibao_close'></image>
+    <view class='haibao_1'>
+      <view class='haibao_name'>名字</view>
+      <view class='haibao_2'>已打卡</view>
+      <view class='haibao_2'>星期六</view>
+      <view class='haibao_3'>36<text style='font-size:28rpx;margin-left:10rpx;'>天</text></view>
+      <view class='haibao_3'>07.16</view>
+    </view>
+    <view class='haibao_view_1'>
+      “to remeber,to let go,and to move on.”
+    </view>
+    <view class='haibao_view_2'>
+      铭记，释怀，然后继续前行
+    </view>
+    <view class='haibao_view_3'>
+      <image src='../../icons/erweima.png' mode='widthFix' class='erweima'></image>
+      <view style='width:50%;margin-left:10%;'>
+        <view class='wid100' style='font-size:28rpx;color:#fff;text-align:left;'>长按识别二维码</view>
+        <view class='wid100' style='font-size:48rpx;color:#fff;text-align:left;'>亲亲袋鼠</view>
+      </view>
+    </view>
+    <button class='but'>保存到相册</button>
+  </view> -->
+  <!--海报end -->
+  <view class='view_bg'>
+    <view class='view_1'>
+      <view class='view_1_left'>
+        <image src='https://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/index_daka_p.jpg' mode='widthFix' class='icon_1'></image>
+        <view class='view_1_bottom' wx:if='{{className!="0"}}'>{{className}}</view>
+      </view>
+      <view class='view_2'>
+        <image src='{{url}}' class='icon_2'></image>
+        <view class='view_21'>
+          <view class='view_title'>{{subTitle}}</view>
+          <view class='view_22'>
+            <view class='name_text'>{{wxname}}</view>
+            <view class='font_1'>{{pnum}}已参加 | {{cnum}}次打卡</view>
+          </view>
+        </view>
+        <view class='view_23'>
+         <text class='font_2' bindtap='go_rili'></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+<!-- 已过期查看进入不需要打卡，后端注意一下-->
+  
+
+  <view class='nav'>
+    <view class="nav_left" data-nav="1" bindtap='changeNav'><text class=" {{nav==1?'bottom_border':''}}">日记</text></view>
+    <view class="nav_center" data-nav="2" bindtap='changeNav'><text class=" {{nav==2?'bottom_border':''}}">详情</text></view>
+    <view class="nav_right" data-nav="3" bindtap='changeNav'><text class="{{nav==3?'bottom_border':''}}">成员</text></view>
+  </view>
+
+  <view class="view_left {{nav==1?'':'displayNone'}}">
+    <block wx:for="{{dakaList}}" wx:for-index='dkindex'>
+    <image src='{{item.touxiang}}' style="height:{{height}}px;border-radius:{{height}}px" class='icon_3'></image>
+    <view class='view_left_1'>
+      <view class='view_left_name'>{{item.wxName}}</view>
+      <!--删除操作功能只有作者本身才有的操作 -->
+       <view class='view_left_11'>{{item.createTimeStr}}</view>
+      <!-- <view class='view_left_11'>{{item.creat_time}}<text class='dian'>·</text>已打卡10次<text class='font_red' bindtap='delete'>删除</text></view> -->
+      <view class='view_left_font'>{{item.detail}}</view>
+      <view class='view_left_12'>
+      <block  wx:for='{{item.photo}}' wx:for-item='tlist1' wx:key="tlist1">
+            <view style="height:{{three_height}}px;" class='three_one' >
+              <image src='{{sourseurl+tlist1.photoUrl}}' class='wid100' mode='aspectFill' bindtap='preview' data-index='{{dkindex}}' data-photourl='{{sourseurl+tlist1.photoUrl}}'></image>
+            </view>
+      </block>
+         </view>
+      <!-- <block wx:for='{{item.photo}}'  wx:for-item='photo' wx:key="photo">
+      <image src='{{sourseUrl+photo.photoUrl}}' mode='widthFix' class='wid100'></image>
+      </block> -->
+      
+      <!-- <view class='view_left_12'>
+        
+        <view data-id='1' bindtap="video_play" class='video_1'>
+          <video wx:if="{{curId==1}}" id="video1" src="{{video_src}}" controls='true' loop='true' class='video_1'></video>
+          <image wx:else src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/video_post_1.png' mode='widthFix' class='wid100'></image>
+        </view>
+        
+        
+        <view data-id='2' bindtap="video_play" class='three_one'>
+          <video wx:if="{{curId==2}}" data-id='2' id="video2" src="{{video_src}}" controls='true' loop='true' style="height:{{three_height}}px;" class='three_one' bindplay="video_play"></video>
+          <image wx:else src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/video_post_1.png' mode='widthFix' class='wid100'></image>
+        </view>
+        <block wx:for="{{7}}">
+        <view style="height:{{three_height}}px;" class='three_one'>
+          <image src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/banner.png' class='wid100' mode='aspectFill'></image>
+        </view>
+        </block>
+      </view> -->
+      <!-- <view class='view_13'>
+        <image wx:if="{{isPlay1==true}}" src="../../icons/play.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{audio_src}}" bindtap="audio_pause"></image>
+        <image wx:if="{{isPlay1!=true}}" src="../../icons/pause.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{audio_src}}" bindtap="audio_click"></image>
+        <view class="free-MusicProgress">
+          <view style="width:{{progress1!=null?progress1:0}}%;"></view>
+        </view>
+        <view class='total_time'>{{total_time1!=null?total_time1:'00:00'}}</view>
+      </view> -->
+      <view class='view_14' wx:if='{{item.tcomentList.length >0}}'>
+        <view class='sanjiao'></view>
+        
+        <view class='view_14_1' >
+       
+        <text class='view_14_left' >教师评语</text>：
+        <block wx:for='{{item.tcomentList}}' wx:for-item='tlist' wx:key="tlist">
+        <view>{{tlist.commentDetail}}</view>
+        </block>
+        
+        </view>
+        
+        <!-- <view class='view_13'>
+        <image wx:if="{{isPlay1==true}}" src="../../icons/play.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{audio_src}}" bindtap="audio_pause"></image>
+        <image wx:if="{{isPlay1!=true}}" src="../../icons/pause.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{audio_src}}" bindtap="audio_click"></image>
+        <view class="free-MusicProgress">
+          <view style="width:{{progress1!=null?progress1:0}}%;"></view>
+        </view>
+        <view class='total_time'>{{total_time1!=null?total_time1:'00:00'}}</view>
+      </view> -->
+      </view>
+      <view class='view_15' style="{{item.priseList.length<=0?'margin-bottom:30rpx;':''}}">
+        <image src='../../icons/unzan.png' wx:if="{{isZan!=true}}" class='icon_5' bindtap='dianzan' wx:if="{{item.myPriseNo==true}}" bindtap='dianzan_a' data-id='{{item.dakaId}}'></image>
+        <image src='../../icons/zan.png' wx:if="{{isZan==true}}" class='icon_5' bindtap='undianzan' wx:if="{{item.myPriseYes==true}}" bindtap='dianzan_b' data-id='{{item.dakaId}}'></image>赞
+        <image style='margin-left: 20rpx;' src='../../icons/pinglun.png' class='icon_5' bindtap='go_pinglun' data-commentid='{{item.dakaId}}'></image><text bindtap='go_pinglun' data-commentid='{{item.dakaId}}'>评论</text>
+      </view>
+      <view class='view_16' wx:if='{{item.priseList.length>0}}'>
+        <view class='sanjiao'></view>
+        <view class='view_16_1'><image src='../../icons/lan_zan.png' class='icon_6'></image>
+        <block wx:for='{{item.priseList}}' wx:for-item='prise' wx:key="prise">
+{{prise.wxName+','}}
+        </block>
+        </view>
+        <view class='view_16_2' wx:if='{{item.comentList.length>0}}'>
+        <block wx:for='{{item.comentList}}' wx:for-index="idx" wx:for-item='comment' wx:key="comment">
+        <text class='view_14_left'  >
+        {{comment.speakName}}     </text>：
+        {{comment.commentDetail}}
+        </block>
+        </view>
+        <!-- <view class='view_16_2'><text class='view_14_left'>心动</text>回复<text class='view_14_left'>欧阳娜娜</text>：如果你无法简洁的表达你的想法，那只能说明你还不够解。如果你无法简洁的表达你的想法，那只能说明你还不够解。</view> -->
+      </view>
+    </view>
+    </block>
+  </view>
+
+
+  <view class="view_center {{nav==2?'':'displayNone'}}">
+    <view class='view_center_1'>{{miaoshu}}</view>
+
+    <block wx:for = '{{huodong}}'>
+
+    <!-- <view data-id='3' bindtap="video_play" class='video_1' wx:if='{{item.dataType=="video"}}'>
+      <video wx:if="{{curId==3}}" data-id='3' id="video3" src="{{sourseurl+item.detail}}" controls='true' loop='true' class='video_1' bindplay="video_play"></video>
+      <image wx:else src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/video_post_1.png' mode='widthFix' class='wid100'></image>
+    </view> -->
+
+    <view wx:if="{{item.dataType=='video'}}" data-id="{{index}}" bindtap="video_play" class="video_{{index}}">
+      <video wx:if="{{curId==index}}" id="video{{index}}" data-id="{{index}}" src="{{videourl+item.detail}}" controls='true' bindended='pause' autoplay='true' bindpause='pause' class='video_view'></video>
+      <image wx:else src="{{video_poster}}" mode='widthFix' class='img_view'></image>
+      </view>
+
+    <image src='{{sourseurl+item.detail}}' mode='widthFix' class='wid100' wx:if='{{item.dataType=="photo"}}'>
+    </image>
+
+    <view class='view_13'  wx:if='{{item.dataType=="voice"}}'>
+        <image wx:if="{{isPlay1==true}}" src="../../icons/play.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{sourseurl+item.detail}}" bindtap="audio_pause"></image>
+        <image wx:if="{{isPlay1!=true}}" src="../../icons/pause.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{sourseurl+item.detail}}" bindtap="audio_click"></image>
+        <view class="free-MusicProgress">
+          <view style="width:{{progress1!=null?progress1:0}}%;"></view>
+        </view>
+        <view class='total_time'>{{total_time1!=null?total_time1:'00:00'}}</view>
+    </view>
+    </block>
+  </view>
+
+
+  
+  <view class="view_right {{nav==3?'':'displayNone'}}">
+    <view class='view_right_1'  wx:for='{{people}}'>
+      <image src='{{item.headImage}}' class='icon_7'></image>
+      <text>名字</text>
+      <view class='view_right_2'>{{item.minTimeStr}}\t\t加入</view>
+    </view>
+    
+  </view>
+</page>

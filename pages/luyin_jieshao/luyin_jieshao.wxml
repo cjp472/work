@@ -1,0 +1,32 @@
+<!--pages/luyin_jieshao/luyin_jieshao.wxml-->
+<page>
+  <view style='background:url({{img}}) no-repeat center center;background-size:cover' class='box'>
+    <view class='main'>
+      <view class='fs_32 main_t d_flex_cen_cen'>请选择编辑类型</view>
+      <!-- <view class='main_b' bindtap='Popup_show'>  -->
+      <view class='main_b d_flex_cen_sb fs_30' bindtap='Popup_show'>
+        <view>使用模板</view>
+        <view>
+          <image src='../../icons/bottm_icon.png' style='width:20rpx;height:18rpx;' />
+        </view>
+        <!-- 弹框 -->
+        <view hidden='{{Popup}}' class='main_Popup fs_28'>
+          <view class='main_Popup_i d_flex_cen_h' style='  border-bottom: 1rpx solid #ededed;' catchtap='go_moban'>
+            <image src='../../icons/landian.png' style='width:16rpx;height:16rpx;' class='m_r_10'    />使用模板
+          </view>
+          <view class='main_Popup_i d_flex_cen_h' catchtap='go_moban_b'>
+            <image src='../../icons/landian.png' style='width:16rpx;height:16rpx;' class='m_r_10'   />自定义模板
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+  <view class='text_box'>
+    <view style='color:#333;' class='fs_32 '>- 温馨提示 -</view>
+    <view style='color:#666;' class='fs_30 m_t_20'> 手机版目前只支持简单的自定义编辑</view>
+    <view style='color:#666;' class='fs_30 m_t_5'>复杂的自定义编辑请移步电脑端</view>
+  </view>
+
+</page>

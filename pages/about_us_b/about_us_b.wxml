@@ -1,0 +1,75 @@
+<!--pages/about_us/about_us.wxml-->
+<page>
+  <view class='header fs_36' style='color:##161418' >
+    欢迎您！
+    <view style='height:675rpx;overflow: hidden;border-radius:10rpx ' class='m_t_20'>
+      <image style=' width:670rpx;' mode='widthFix' src='../../icons/5767.jpg' />
+    </view>
+  </view>
+  <view class='main_a'>
+    <view class='d_flex_cen_sb main_title'>
+      <view class='fs_36 main_title_l d_flex_cen_h'>
+        精品课程
+      </view>
+      <view class='fs_28' bindtap=''>更多
+        <image src='../../icons/more.png' style='width:16rpx;height:24rpx;' class='m_l_5' />
+      </view>
+    </view>
+    <view class='main d_flex_cen_sb'>
+      <block wx:for="{{main_key}}" wx:for-item="item" wx:for-index="idx" wx:if='{{idx>1}}'>
+        <view class='main_i shadow' catchtap='' data-id="{{item.id}}">
+          <view style='height:190rpx;overflow: hidden;'>
+            <image style=' width: 320rpx;' mode='widthFix' src='{{item.image}}' />
+          </view>
+          <view class='d_flex_cen_cen  fs_28 ' style='height:80rpx'>
+            <view class='text_hidden main_title ' style='width: 300rpx;'> {{item.title}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='fs_36 header '>
+    <view>校区介绍</view>
+    <view class=' wenben_box' style='font-weight: 400;'>
+      <!-- <block> -->
+      <text class='fs_28'>{{text}}</text>
+      <view class='m_t_20'>
+        <!-- <block wx:for='{{les.lesDetail}}' wx:for-index='idx' wx:if='{{item.descType=="video"}}'> -->
+        <view catchtap=''>
+          <!-- <video class='video_a' src='{{vdo}}' hidden='{{video_show}}' id='myVideo'></video> -->
+          <view hidden='{{video_hidden}}' class='video ' style='overflow: hidden;'>
+            <view class='video bofang_fix' style="background:url({{beijing}}) no-repeat center center;background-size:cover">
+            </view>
+            <image src='../../icons/play_2.png' class='bofang' />
+          </view>
+        </view>
+        <!-- </block> -->
+      </view>
+      <block wx:for='{{3}}'>
+          <view style='height:360rpx;overflow: hidden;border-radius:10rpx' class='m_t_20'>
+            <image style=' width: 670rpx;' mode='widthFix' src='../../icons/5767.jpg' />
+          </view>
+        </block>
+      <!-- </block> -->
+    </view>
+  </view>
+  <view class=' footer '>
+    <view class='width_45 d_flex_cen_h footer_l'>
+      <button class='d_flex_cen_cen' bindtap='haibao'>
+        <image src='../../icons/Courses_a.png' style='width:44rpx;height:42rpx;' />
+      </button>
+      <button class='d_flex_cen_cen' data-url='../map/map' bindtap='go_url'>
+        <image src='../../icons/Courses_c.png' style='width:44rpx;height:42rpx;' />
+      </button>
+      <button class='d_flex_cen_cen'>
+        <image src='../../icons/Courses_b.png' style='width:40rpx;height:42rpx;' />
+      </button>
+    </view>
+    <view class='width_55 footer_r fs_36 ' data-url='../booking/booking' bindtap='go_url'>预约课程</view>
+  </view>
+   <view class='but_fix fixed fs_34'>   
+    <view class='Gradient_color  d_flex_cen_cen' bindtap='Return' >取消</view>
+    <view class='Gradient_color d_flex_cen_cen' bindtap='bianji'>进入编辑</view>
+   </view>
+  
+</page>

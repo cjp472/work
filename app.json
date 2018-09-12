@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/home_page/home_page",
+    "pages/Sound_recording/Sound_recording",
+    "pages/lunbotu/lunbotu",
+    "pages/luyin_jieshao/luyin_jieshao",
+    "pages/luyin_bianji/luyin_bianji",
+    "pages/zhishiku/zhishiku",
+    "pages/bianji_fenlei/bianji_fenlei",
+    "pages/bianji_fenlei_a/bianji_fenlei_a",
+    "pages/curriculum_bianji/curriculum_bianji",
+    "pages/about_us/about_us",
+    "pages/edit_view/edit_view",
+    "pages/new_daka/new_daka",
+    "pages/edit_notice/edit_notice",
+    "pages/brand/brand",
+    "pages/curriculum_bianji_i/curriculum_bianji_i",
+    "pages/my_daka/my_daka",
+    "pages/daka_detail/daka_detail",
+    "pages/pinglun/pinglun",
+    "pages/activity/activity",
+    "pages/daka_type/daka_type",
+    "pages/new_daka_b/new_daka_b",
+    "pages/class_cricle/class_cricle",
+    "pages/increase_CCZJ/increase_CCZJ",
+    "pages/about_us_box/about_us_box",
+    "pages/about_us_a/about_us_a",
+    "pages/about_us_b/about_us_b",
+    "pages/baoma_bianji/baoma_bianji",
+    "pages/daka_rili/daka_rili",
+    "pages/edit_view_xiaoqu/edit_view_xiaoqu",
+    "pages/tologin/tologin"
+    
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

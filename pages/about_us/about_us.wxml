@@ -1,0 +1,115 @@
+<!--pages/about_us/about_us.wxml-->
+<page>
+  <view class='con_view'>
+
+    <view class='name shadow' style='height:860rpx;'>
+      <view class='fs_32 font_weight'>
+        <text style='color:#fb484b' class='fs_34'>*</text> 封面图片（宽高：375*375）
+      </view>
+      <view class='img_box m_b_30 d_flex_cen_cen m_t_25' bindtap='chooseImage'>
+        <block>
+          <view  class='img_box_i'>
+          <image class='img_box_img' src='{{beijing}}'     data-src="{{beijing}}"   >      </image>
+
+          <!-- <image src='../../icons/Close.png' hidden='{{img_show}}'  bindtap='guanbi'  class='Close'       /> -->
+
+          </view>
+        </block>
+      </view>
+      <button class='but d_flex_cen_cen fs_34 Gradient_color' bindtap='chooseImage'>{{beijing!=null?'更换':'上传'}}</button>
+    </view>
+
+
+    
+      <view class='shop_view'>
+        <view class='fs_32 font_weight' style='padding-left:3%;'>
+          <text style='color:#fb484b' class='fs_34'>*</text> 校区基本信息
+        </view>
+        <block wx:for="{{mendian}}" wx:for-index='index' wx:if='{{item.state!=-1}}'>
+        <view class='shop_view_1'>
+          <view class='view_shop_left'>
+            <text class='red_color'>*</text>门店名称</view>
+          <input class='input_1' placeholder='请输入门店名称' placeholder-placeholder-style='text-align:right;' bindinput='inputName' value='{{item.name}}' data-index='{{index}}' data-id='{{item.id}}'></input>
+        </view>
+        <view class='shop_view_1'>
+          <view class='view_shop_left'>
+            <text class='red_color'>*</text>门店地址</view>
+          <input class='input_1' placeholder='请输入门店地址' placeholder-placeholder-style='text-align:right;' bindinput='inputAddress' value='{{item.address}}' data-index='{{index}}' data-id='{{item.id}}'></input>
+        </view>
+        <view class='shop_view_1'>
+          <view class='view_shop_left'>
+            <text class='red_color'>*</text>营业时间</view>
+          <input class='input_1' placeholder='如：每周一至周五 09:00-15:00' placeholder-placeholder-style='text-align:right;' bindinput='inputTime1' value='{{item.time1}}' data-index='{{index}}' data-id='{{item.id}}'></input>
+        </view>
+        <view class='shop_view_1'>
+          <view class='view_shop_left'>
+            <text class='red_color'>*</text>联系电话</view>
+          <input class='input_1' type='number' placeholder='请输入门店联系电话' placeholder-placeholder-style='text-align:right;' bindinput='inputPhone' value='{{item.phone}}' data-index='{{index}}' data-id='{{item.id}}'></input>
+        </view>
+        <view class='tishi_view'>点击“保存”后即可同步到小程序前台</view>
+        <view class='but_view'>
+          <view class='view_but1' data-index='{{index}}' bindtap='delete_shop' data-id='{{item.id}}'>删除</view>
+          <button class='view_but2' bindtap='baocun' data-index='{{index}}' data-id='{{item.id}}'>保存</button>
+        </view>
+        <view class='border'></view>
+        </block>
+        <view class='add_shop' bindtap='add_shop'><text style='font-size:50rpx;'>+</text> <text>新增校区</text>
+        </view>
+      </view>
+    
+
+    <view class='name d_flex_cen_sb fs_32 shadow add_warn_view' style='height:90rpx;'  bindtap='go_url' data-url='../curriculum_bianji/curriculum_bianji' >
+      <view class='warn_view'><text style='color:#fb484b;vertical-align:middle;margin-right:10rpx;' class='fs_34'>*</text>精品课程</view>
+      <image src='../../icons/right.png' style='width:14rpx;height:24rpx;' />
+    </view>
+
+    <view class='name d_flex_cen_sb fs_32 shadow add_warn_view' style='height:90rpx;'
+     bindtap='go_url' data-url='../edit_view_xiaoqu/edit_view_xiaoqu'>
+      <view class='warn_view'><text style='color:#fb484b;vertical-align:middle;margin-right:10rpx;' class='fs_34'>*</text>校区介绍</view>
+      <image src='../../icons/right.png' style='width:14rpx;height:24rpx;' />
+    </view>
+
+  </view>
+  <!--裁剪-->
+  <view class="top {{isExit!=1?'':'displayNone'}}" bindtap='getImage'>
+   
+     <image src='{{imageSrc}}' class='selectImg'  /> 
+      <canvas canvas-id="myCanvas" style="position:absolute;top:-9999px;left:-9999px;width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;"></canvas>  
+
+  </view>
+
+  <view class="wx-content-info {{isExit==1||isExit==3?'displayNone':''}}" wx:if="{{imageSrc}}">
+
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+      <view class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+        <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx"  bindtap='getImage'></image>
+        <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+          <view class="wx-cropper-view-box">
+           <!-- <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;top:-9999px;left:-9999px;"></canvas>  -->
+            <view wx:if="{{innerAspectRadio>=1}}">
+            <view class="wx-cropper-dashed-h"></view>
+            <view class="wx-cropper-dashed-v"></view>
+            <view class="wx-cropper-line-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+            <view class="wx-cropper-point point-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+            <view class="wx-cropper-point point-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class='getnone' bindtap="getnone">取消</view>
+      <view class='getBtn' bindtap="getImageInfo">确认</view>
+    </view>
+  </view>
+
+</page>

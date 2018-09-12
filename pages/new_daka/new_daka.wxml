@@ -1,0 +1,91 @@
+<!--pages/new_daka/new_daka.wxml-->
+<page>
+  <view class='bg_view'>
+    <view class='title_2'>
+      <view class='title' style='width:30%;'>
+        <text class='red_color'>*</text>选择班级</view>
+      <view class="section">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker" style="background-image: url('../../icons/bottom.png');">
+            {{array[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='title'>
+      <text class='red_color'>*</text>打卡标题</view>
+    <input class='input_1' placeholder='请输入打卡标题'  bindinput ="titleInput"></input>
+    <view class='title'>
+      <text class='red_color'>*</text>打卡时间</view>
+    <view class='time_view'>
+      <view class="section2">
+        <picker mode="date" value="{{date}}" start="2018-08-01" end="2117-09-01" bindchange="bindDateChange">
+          <view class="picker2" style="background-image: url('../../icons/bottom.png');">
+            <image src='../../icons/rili.png' class='rili_icon'></image>{{date}}
+          </view>
+        </picker>
+      </view> -
+      <view class="section2">
+        <picker mode="date" value="{{date2}}" start="2018-08-01" end="2117-09-01" bindchange="bindDateChange2">
+          <view class="picker2" style="background-image: url('../../icons/bottom.png');">
+            <image src='../../icons/rili.png' class='rili_icon'></image>{{date2}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='title'>
+      <text class='red_color'>*</text>打卡描述</view>
+    <textarea maxlength='-1' class='text_area' placeholder='请输入打卡描述' bindinput ="detailInput"></textarea>
+
+    <!-- 图片隐藏 -->
+    <view class='img_hid' hidden='{{img_yincang}}'>
+      <view class='img_yangshi' wx:for='{{totalsourse}}' wx:for-index='index' wx:if='{{item.types==2}}'>
+        <image class='shangchuan_img_i' mode='aspectFill' bindtap='previewImage' src='{{item.shuju}}'></image>
+        <view data-index="{{index}}" class='shanchu_img' bindtap='quxiao_img' style='left:-43rpx;bottom:-2rpx;'>X</view>
+      </view>
+      <view class='tianjia_tu' bindtap='img'>+</view>
+    </view>
+
+    <!-- video -->
+    <view class='video_box' hidden='{{video_yincang}}'>
+      <view bindtap="video_play" class='video_left'>
+        <video wx:if="{{curId==1}}" autoplay='true' id="video1" src="{{src}}" controls='true' bindended='video_pause' class='wid100' bindpause='video_pause'></video>
+        <image wx:else src='{{video_poster}}' mode='widthFix' class='wid100'></image>
+      </view>
+      <view class='shanchu_video' bindtap='shan_video'>X</view>
+    </view>
+
+
+    <!-- 音频隐藏 -->
+    <view hidden='{{audio_xianshi}}' class='audio_box'>
+      <view class='view_audio'>
+        <view class='shanchu_audio' bindtap='shan_view_audio'>X</view>
+        <image wx:if="{{isRecord==true}}" src="../../icons/play.png" class='icon_4' data-isplay="{{isRecord}}" bindtap="record_pause"></image>
+        <image wx:if="{{isRecord!=true}}" src="../../icons/pause.png" class='icon_4' data-isplay="{{isRecord}}" bindtap="record_click"></image>
+        <view class='audio_time' style='margin-left:30rpx;'>{{time1}}'{{time2}}"</view>
+        <view class='audio_time' style='margin-left:50%;' bindtap='ab_on'>完成</view>
+      </view>
+    </view>
+
+    <view class='audio_guanbi' hidden='{{audio_guanbi}}'>
+      <view class='view_13'>
+        <view class='shanchu_audio' bindtap='shan_audio'>X</view>
+        <image wx:if="{{isPlay==true}}" src="../../icons/play.png" class='icon_4' data-isplay="{{isPlay}}" data-src="{{audio_src}}" bindtap="audio_pause"></image>
+        <image wx:if="{{isPlay!=true}}" src="../../icons/pause.png" class='icon_4' data-isplay="{{isPlay}}" data-src="{{audio_src}}" bindtap="audio_click"></image>
+        <view class="free-MusicProgress">
+          <view style="width:{{progress!=null?progress:0}}%;"></view>
+        </view>
+        <view class='total_time'>{{time1}}.{{time2}}</view>
+      </view>
+    </view>
+
+    <view class='view_icon'>
+      <image src='../../icons/icon1.png' class='icon_1' bindtap='img' hidden='{{img_kaiguan}}'></image>
+      <image src='../../icons/icon2.png' class='icon_1' bindtap='audio' hidden='{{audio_kaiguan}}'></image>
+      <image src='../../icons/icon3.png' class='icon_1' bindtap='video' hidden='{{video_kaiguan}}'></image>
+    </view>
+
+  </view>
+
+  <button class='confirm Gradient_color d_flex_cen_cen fs_34' bindtap='Return'>发布打卡</button>
+</page>

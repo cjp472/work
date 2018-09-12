@@ -1,0 +1,23 @@
+<!--pages/bianji_fenlei/bianji_fenlei.wxml-->
+<page>
+  <view>
+    <scroll-view scroll-y  style="height: 1000rpx;"> 
+      <view class='Label_box'>
+        <block wx:for='{{checkbox}}'>
+          <view class='Label_i  d_flex_cen_h m_b_20 fs_30'>
+            <view class='Label_i_l d_flex_cen_h'>
+              <input  placeholder='请输入分类类型'  /> 
+          </view>
+            <view class='Label_i_r'>
+              <view class='Gradient_color  d_flex_cen_cen  width_50  ' bindtap='showToast' style=' border-right: 1rpx solid #fff'>保存</view> 
+              <view class='Gradient_color   d_flex_cen_cen width_50' data-index='{{index}}' bindtap='shanchu'>删除</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='fixed but d_flex_cen_cen Gradient_color fs_34' bindtap="insert">
+    新增分类
+  </view>
+</page>

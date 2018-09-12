@@ -1,0 +1,74 @@
+/* pages/home_page/home_page.wxss */
+page{
+  background-color: #f6f6f6;
+  border-top: 1rpx solid #cdcdcd;
+}
+.header{
+  height: 540rpx;
+  background-color: #fff;
+  padding-top: 20rpx;
+}
+.header_top{
+  width: 690rpx;
+  height: 330rpx;
+  border-radius: 12rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 5rpx 5rpx;
+}
+.jia_tu{
+  width:30rpx;
+  height:300rpx;
+  border-top-left-radius: 12rpx;
+    border-bottom-left-radius: 12rpx;
+  overflow: hidden;
+}
+.nav{
+  height: 170rpx;
+  display: flex;
+}
+.nav_i{
+  flex-direction: column;
+  color: #616161;
+}
+.baoma{
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.baoma_i{
+  width: 337rpx;
+  height: 362rpx;
+  flex-direction: column
+}
+.footer{
+  width: 695rpx;
+  height: 220rpx;
+  margin: 20rpx auto 0;
+  display: flex;
+}
+.footer_i{
+ height: 220rpx;
+ padding-left: 35rpx;
+
+  box-sizing: border-box;
+}
+.special{
+position: fixed;
+z-index: 999;
+bottom: 10%;
+right: 0;
+background-color: #fff;
+width: 120rpx;
+height: 100rpx;
+border-top-left-radius: 100rpx;
+border-bottom-left-radius: 100rpx;
+}
+.img_2{
+width: 80rpx;
+height: 80rpx;
+border-radius: 80rpx;
+margin-top:10rpx;
+margin-left:10rpx;
+}

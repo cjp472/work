@@ -1,0 +1,22 @@
+<!--pages/Courses_box/Courses_box.wxml-->
+<page>
+  <view class='main d_flex'>
+    <block wx:for="{{main_key}}" wx:for-item="item" wx:for-index="idx">
+      <view class='main_i shadow'  data-id="{{item.id}}">
+        <view style='height:195rpx;overflow: hidden;'>
+          <image style=' width: 330rpx;' mode='widthFix' src='{{item.image}}' />
+        </view>
+        <view class='d_flex_cen_cen  fs_28 ' style='height:80rpx'>
+          <view class='text_hidden main_title ' style='width: 300rpx;'> {{item.title}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+<view class='fixed but d_flex_cen_cen Gradient_color fs_34' bindtap="go_i">
+    新增课程
+  </view>
+
+
+</page>

@@ -1,0 +1,154 @@
+/* pages/my_daka/my_daka.wxss */
+page{
+  font-size: 28rpx;
+  border-top: 1rpx solid #cdcdcd;
+
+}
+.name_text{
+  width:80rpx;
+  display:inline-block;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.Newly{
+  color: #fff;
+    background-color: #f6f6f6;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding-top: 70rpx;
+}
+.Newly_but{
+  width: 200rpx;
+  height: 70rpx;
+  border-radius: 12rpx;
+}
+.touxinag{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+.nav{
+
+  color: #FFFFFF;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+}
+.nav_left,.nav_right{
+  width: 50%;
+  text-align: center;
+}
+.bottom_border{
+  border-bottom: 4rpx solid #fff;
+  font-weight: bold;
+  padding-bottom: 10rpx;
+}
+.view_left,.view_right{
+  width: 89.9%;
+  margin: 20rpx auto 20rpx;
+}
+.view_1{
+  width: 100%;
+  border-radius: 12rpx;
+  background-color: #fff;
+  box-shadow: 0 0 20rpx #ccc;
+  height: 224rpx;
+  margin-top: 20rpx;
+  display: flex;
+}
+.view_1_left{
+  margin: 32rpx;
+  width: 168rpx;
+  height: 168rpx;
+  box-sizing: border-box;
+  border: 1rpx solid rgba(166,165,165,0.34);
+  background-color: #fff;
+  position: relative;
+  border-radius: 8rpx;
+}
+.icon_1{
+  width: 144rpx;
+  margin: 44rpx 12rpx 0;
+  height: 56rpx;
+}
+.view_1_bottom{
+  position: absolute;
+  bottom: -20rpx;
+  background-image: linear-gradient(-180deg, #FC8865 0%, #F85035 100%);
+  border-radius: 200rpx;
+  width: 104rpx;
+  left: 32rpx;
+  height: 36rpx;
+  z-index: 99;
+  color: #fff;
+  text-align: center;
+  font-size: 20rpx;
+  line-height: 36rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.icon_2{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 88rpx;
+  margin: 50rpx 20rpx 20rpx 0;
+}
+.view_2{
+  width: 46%;
+  margin-top: 50rpx;
+}
+.view_title{
+  width: 50%;
+  font-size: 32rpx;
+  color: #161418;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.view_21{
+  width: 100%;
+  font-size: 24rpx;
+  color: #161418;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.img_1{
+  width: 126rpx;
+  float:right;
+  margin-top: -22rpx;
+}
+.view_22{
+  width: 100%;
+  text-align: right;
+  font-size: 20rpx;
+  color: #A6A5A5;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.view_23{
+  position: relative;
+  width: 47%;
+}
+.icon_3{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+}
+.icon_31{
+  position: absolute;
+  right: 50rpx;
+  z-index: 100;
+}
+.icon_32{
+  position: absolute;
+  right: 25rpx;
+  z-index: 99;
+}
+.positionR{
+  position: relative;
+}

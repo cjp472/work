@@ -1,0 +1,111 @@
+<!--pages/class_cricle/class_cricle.wxml-->
+<page>
+ <view class="view_left {{nav==1?'':'displayNone'}}">
+    <block wx:for="{{zuji}}" wx:for-index='zjindex'>
+    <image src='{{item.wxTouxiang}}' style="height:{{height}}px;border-radius:{{height}}px" class='icon_3'></image>
+    <view class='view_left_1'>
+      <view class='view_left_name'>{{item.wxName}}</view>
+      <!--删除操作功能只有作者本身才有的操作 -->
+       <view class='view_left_11'>{{item.createTimeStr}}</view>
+      <view class='view_left_font'>{{item.detail}}</view>
+      <view class='view_left_12'>
+       
+       <block wx:for='{{item.comments}}' wx:for-item='tlist1' wx:key="tlist1">
+        <view style="height:{{three_height}}px;" class='three_one' wx:if='{{tlist1.dataType=="photo"}}'>
+              <image src='{{sourseurl+tlist1.detail}}' class='wid100' mode='aspectFill' bindtap='preview' data-index='{{zjindex}}' data-photourl='{{sourseurl+tlist1.detail}}'></image>
+              
+            </view>
+
+<!-- <view wx:if="{{tlist1.dataType=='video'}}" data-id="{{index}}" bindtap="video_play" style="height:{{three_height}}px;" class='three_one'>
+        <video wx:if="{{curId==index}}" id="video{{index}}" data-id="{{index}}" src="{{videourl+tlist1.detail}}" controls='true' bindended='pause' autoplay='true' bindpause='pause' class='video_view'></video>
+        <image wx:else src="{{video_poster}}" mode='widthFix' class='img_view'></image>
+      </view> -->
+        
+            
+</block>
+      <block wx:for='{{item.comments}}' wx:for-item='tlist' wx:key="tlist">
+        <!-- 视频-->
+      <view wx:if="{{tlist.dataType=='video'}}" data-id="{{index}}" bindtap="video_play" class="wid100 video_{{index}}">
+        <video wx:if="{{curId==index}}" id="video{{index}}" data-id="{{index}}" src="{{videourl+tlist.detail}}" controls='true' bindended='pause' autoplay='true' bindpause='pause' class='video_view'></video>
+        <image wx:else src="{{video_poster}}" mode='widthFix' class='img_view'></image>
+      </view>
+        <block wx:if='{{tlist.dataType=="photo"}}'>
+        <!-- <image src='{{sourseurl+tlist.detail}}' mode='widthFix' class='wid100' bindtap='preview' data-index='{{zjindex}}' data-photourl='{{sourseurl+tlist.detail}}'></image> -->
+        </block>
+        <view class='view_13'  wx:if='{{tlist.dataType=="voice"}}'>
+                <image wx:if="{{isPlay1==true}}" src="../../icons/play.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{sourseurl+tlist.detail}}" bindtap="audio_pause"></image>
+                <image wx:if="{{isPlay1!=true}}" src="../../icons/pause.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{sourseurl+tlist.detail}}" bindtap="audio_click"></image>
+                <view class="free-MusicProgress">
+                  <view style="width:{{progress1!=null?progress1:0}}%;"></view>
+                </view>
+                <view class='total_time'>{{total_time1!=null?total_time1:'00:00'}}</view>
+              </view>
+
+        
+       
+         
+        </block>
+      </view>
+     
+      <view class='view_15' style="{{item.praises.length<=0?'margin-bottom:30rpx;':''}}">
+
+
+        <!-- <image src='../../icons/unzan.png'  class='icon_5'  data-id='{{item.id}}' wx:if='{{item.myPraise==0}}'></image>
+        <image src='../../icons/zan.png'  class='icon_5'  data-id='{{item.id}}' wx:if='{{item.myPraise!=0}}'></image>赞
+
+
+        <image src='../../icons/pinglun.png' style='margin-left:20rpx;' class='icon_5'  data-id='{{item.id}}'></image><text  data-id='{{item.id}}'>评论</text> -->
+        <!-- <image src='../../icons/audio_icon3.png' class='icon_5' bindtap='go_pshare'></image>分享 -->
+      </view>
+      <view class='view_16' wx:if='{{item.praises.length>0}}'>
+        <view class='sanjiao'></view>
+        <view class='view_16_1'><image src='../../icons/lan_zan.png' class='icon_6'></image>
+        <block wx:for='{{item.praises}}' wx:for-item='zans' wx:key="zans">
+{{zans.myName}}
+        </block>
+
+             </view>
+        <view class='view_16_2' wx:for='{{item.pingluns}}' wx:for-item='pl' wx:key="pl">
+          <text class='view_14_left'>{{pl.speakName}}</text>：{{pl.detail}}</view>
+        <!-- <view class='view_16_2'><text class='view_14_left'>心动</text>回复<text class='view_14_left'>欧阳娜娜</text>：如果你无法简洁的表达你的想法，那只能说明你还不够解。如果你无法简洁的表达你的想法，那只能说明你还不够解。</view> -->
+      </view>
+    </view>
+    </block>
+  </view>
+  <view class="view_center {{nav==2?'':'displayNone'}}">
+    <view class='view_center_1'>你无法简洁的表达你的想法，那只能说明你还不够解。如果你无法简洁的。表达你的想法，那只能说明你还不够解。如果你无。法简洁的表达你的想法，那只能说明你还不够解。如果你无法简洁的表达你。的想法，那只能说明你还不够解。</view>
+    <view data-id='3' bindtap="video_play" class='video_1'>
+      <video wx:if="{{curId==3}}" data-id='3' id="video3" src="{{video_src}}" controls='true' bindended='pause' class='video_1' bindplay="video_play"></video>
+      <image wx:else src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/video_post_1.png' mode='widthFix' class='wid100'></image>
+    </view>
+    <image src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/banner.png' mode='widthFix' class='wid100'></image>
+    <view class='view_13'>
+        <image wx:if="{{isPlay1==true}}" src="../../icons/play.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{audio_src}}" bindtap="audio_pause"></image>
+        <image wx:if="{{isPlay1!=true}}" src="../../icons/pause.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{audio_src}}" bindtap="audio_click"></image>
+        <view class="free-MusicProgress">
+          <view style="width:{{progress1!=null?progress1:0}}%;"></view>
+        </view>
+        <view class='total_time'>{{total_time1!=null?total_time1:'00:00'}}</view>
+      </view>
+  </view>
+  <view class="view_right {{nav==3?'':'displayNone'}}">
+    <view class='view_right_1' bindtap='go_rili'>
+      <image src='../../icons/like_icon.png' class='icon_7'></image>
+      <text>名字</text>
+      <view class='view_right_2'>已打卡<text>10</text>次</view>
+    </view>
+    <view class='view_right_1'>
+      <image src='../../icons/like_icon.png' class='icon_7'></image>
+      <text>名字</text>
+      <view class='view_right_2'>已打卡<text>10</text>次</view>
+    </view>
+    <view class='view_right_1'>
+      <image src='../../icons/like_icon.png' class='icon_7'></image>
+      <text>名字</text>
+      <view class='view_right_2'>已打卡<text>10</text>次</view>
+    </view>
+  </view>
+   <view class='fixed but d_flex_cen_cen Gradient_color fs_34' bindtap="go_i">
+    新建
+  </view>
+</page>

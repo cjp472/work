@@ -1,0 +1,99 @@
+<!--pages/curriculum_bianji_i/curriculum_bianji_i.wxml-->
+<page>
+  <view class='name d_flex_cen_sb fs_32 shadow' style='height:90rpx;'>
+    <view style='width:40%;'>
+      <text style='color:#fb484b' class='fs_34'>*</text> 课程名称
+    </view>
+    <view style='width:60%;'>
+      <input placeholder='请输入课程名称' placeholder-style=' font-size: 30rpx' style='width:100%;text-align:right;'  class='input text-right' bindinput='inputName'/>
+    </view>
+  </view>
+<view class='name shadow' style='height:640rpx;'>
+        <view class='fs_32'>
+          <text style='color:#fb484b' class='fs_34'>*</text> 封面图片（宽高：375*250）
+        </view>
+        <view class='img_box m_b_30 d_flex_cen_cen  m_t_25' bindtap='chooseImage'>
+          <!-- <image   src=''  style='  width: 640rpx;height: 420rpx;'   hidden='{{img_show}}' /> -->
+          <block wx:for-items="{{imageList}}" wx:for-item="image">
+            <view  class='img_box_i'>
+              <image class='img_box_img' src='{{image}}'     data-src="{{image}}"   >      </image>
+
+          <!-- <image src='../../icons/Close.png' hidden='{{img_show}}'  bindtap='guanbi'  class='Close'       /> -->
+            </view>
+          </block>
+        </view>
+        <button class='but d_flex_cen_cen fs_34 Gradient_color ' bindtap='chooseImage'>{{sctishi}}</button>
+      </view>
+  <view class='name d_flex_cen_sb fs_32 shadow' style='height:90rpx;'>
+    <view>
+      <text style='color:#fb484b' class='fs_34'>*</text> 原价
+    </view>
+    <view class='d_flex_cen_h'>
+      <input type='number' placeholder='如500' placeholder-style=' font-size: 30rpx' class='input' bindinput='inputnormalPrice' value='{{inputnormalPrice}}'/>
+        <text>￥</text>
+    </view>
+  </view>
+  <view class='name d_flex_cen_sb fs_32 shadow' style='height:90rpx;'>
+    <view>
+      <text style='color:#fb484b' class='fs_34'>*</text> 现价
+    </view>
+    <view class='d_flex_cen_h'>
+      <input type='number' placeholder='如500' placeholder-style=' font-size: 30rpx' class='input'  bindinput='inputnowPrice' value='{{inputnowPrice}}'/>
+      <text>￥</text>
+    </view>
+  </view>
+
+  <view class='name d_flex_cen_sb fs_32 shadow' style='height:90rpx;' bindtap='go_xiangqing'>
+    <view>
+      <text style='color:#fb484b' class='fs_34'>*</text> 图文详情
+    </view>
+    <view >
+      <image src='../../icons/right.png' style='width:14rpx;height:24rpx;' />
+    </view>
+  </view>
+
+  <button class=' but_2  Gradient_color fs_34 m_t_20 ' bindtap="go_i">
+    发布
+  </button>
+   <!--裁剪-->
+  <view class="top {{isExit!=1?'':'displayNone'}}" bindtap='getImage'>
+   
+     <image src='{{imageSrc}}' class='selectImg'  /> 
+      <canvas canvas-id="myCanvas" style="position:absolute;top:-9999px;left:-9999px;width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;"></canvas>  
+
+  </view>
+
+  <view class="wx-content-info {{isExit==1||isExit==3?'displayNone':''}}" wx:if="{{imageSrc}}">
+
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+      <view class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+        <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx"  bindtap='getImage'></image>
+        <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+          <view class="wx-cropper-view-box">
+           <!-- <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;top:-9999px;left:-9999px;"></canvas>  -->
+            <view wx:if="{{innerAspectRadio>=1}}">
+            <view class="wx-cropper-dashed-h"></view>
+            <view class="wx-cropper-dashed-v"></view>
+            <view class="wx-cropper-line-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+            <view class="wx-cropper-point point-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+            <view class="wx-cropper-point point-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class='getnone' bindtap="getnone">取消</view>
+      <view class='getBtn' bindtap="getImageInfo">确认</view>
+    </view>
+  </view>
+</page>

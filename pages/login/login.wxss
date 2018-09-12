@@ -1,0 +1,72 @@
+/* pages/login/login.wxss */
+page{
+  font-size: 30rpx;
+  border-top: 1rpx solid #ccc;
+}
+.login_bg{
+  background-image: url('http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=houtia_XCX/login_bg.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 1206rpx;
+}
+.logo_img{
+  width: 40%;
+  margin: 200rpx 30% 0;
+  box-sizing: border-box;
+}
+.input_1{
+  padding: 10rpx 0;
+  box-sizing:border-box;
+  border-bottom:1rpx solid #e0e0e0;
+  width: 70%;
+  margin: 140rpx 15% 30rpx;
+  float: left;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #333;
+}
+.input_2{
+  padding: 10rpx 0;
+  box-sizing:border-box;
+  border-bottom:1rpx solid #e0e0e0;
+  width: 70%;
+  margin: 0% 15% 80rpx;
+  float: left;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #333;
+}
+.getNode{
+  position: absolute;
+  top: -150rpx;
+  right: 15%;
+  z-index: 99;
+  color: #fff;
+  padding: 14rpx 40rpx;
+  border-radius: 30rpx;
+  background: -webkit-linear-gradient(to bottom,#6ebefb,#32a2ee); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(to bottom,#6ebefb,#32a2ee); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(to bottom,#6ebefb,#32a2ee); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to bottom,#6ebefb,#32a2ee); /* 标准的语法（必须放在最后）*/
+}
+.viewP{
+  position:relative;
+  width: 100%;
+  float: left;
+}
+.but{
+  width: 70%;
+  margin: 0% 15% 140rpx;
+  box-sizing:border-box;
+  float: left;
+  color: #fff;
+  font-size: 32rpx;
+  letter-spacing: 10rpx;
+  font-weight: bold;
+  border-radius: 10rpx;
+  background: -webkit-linear-gradient(to bottom,#6ebefb,#32a2ee); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(to bottom,#6ebefb,#32a2ee); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(to bottom,#6ebefb,#32a2ee); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to bottom,#6ebefb,#32a2ee); /* 标准的语法（必须放在最后）*/
+}

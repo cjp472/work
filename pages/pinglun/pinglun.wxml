@@ -1,0 +1,45 @@
+<!--pages/pinglun/pinglun.wxml-->
+<page>
+  <textarea maxlength='-1' class='view_1' placeholder='写评论' bindinput='shuru'></textarea>
+
+  <!-- 音频隐藏 -->
+  <!-- <view hidden='{{audio_xianshi}}' class='audio_box'>
+    <view class='view_audio'>
+      <view class='shanchu_audio' bindtap='shan_view_audio'>X</view>
+      <image wx:if="{{isRecord==true}}" src="../../icons/play.png" class='icon_4' data-isplay="{{isRecord}}" bindtap="record_pause"></image>
+      <image wx:if="{{isRecord!=true}}" src="../../icons/pause.png" class='icon_4' data-isplay="{{isRecord}}" bindtap="record_click"></image>
+      <view class='audio_time' style='margin-left:30rpx;'>{{times1}}.{{times2}}</view>
+      <view class='audio_time' style='margin-left:50%;' bindtap='ab_on'>完成</view>
+    </view>
+  </view> -->
+
+  <!-- <view class='audio_guanbi' hidden='{{audio_guanbi}}'>
+    <view class='view_13'>
+      <view class='shanchu_audio' bindtap='shan_audio'>X</view>
+      <image wx:if="{{isPlay==true}}" src="../../icons/play.png" class='icon_4' data-isplay="{{isPlay}}" data-src="{{audio_src}}" bindtap="audio_pause"></image>
+      <image wx:if="{{isPlay!=true}}" src="../../icons/pause.png" class='icon_4' data-isplay="{{isPlay}}" data-src="{{audio_src}}" bindtap="audio_click"></image>
+      <view class="free-MusicProgress">
+        <view style="width:{{progress!=null?progress:0}}%;"></view>
+      </view>
+      <view class='total_time'>{{times1}}.{{times2}}</view>
+    </view>
+  </view> -->
+
+  <!-- <view class='wid8'>
+    <image bindtap='audio' hidden='{{audio_kaiguan}}' src='../../icons/audio_icon.png' class='icon_img'></image>
+  </view> -->
+  <view class='Red'>
+    <view class='fs_34 d_flex_cen_h '>
+      <radio-group bindchange="radioChange">
+        <radio color='#2a9ff0'  value="yes">推荐上墙</radio>
+        <radio color='#2a9ff0' value="no" checked="checked">不推荐上墙</radio>
+      </radio-group>
+      </view>
+    <view class='fs_30 m_t_20' style='color:#666'>您当前剩余{{shengyu}}个推荐名额</view>
+  </view>
+
+
+  <button class='but Gradient_color' bindtap='Return'>发表评论</button>
+
+
+</page>

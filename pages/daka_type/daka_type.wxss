@@ -1,0 +1,101 @@
+/* pages/bianji_fenlei_a/bianji_fenlei_a.wxss */
+
+page {
+  background-color: #f6f6f6;
+  border-top: 1rpx solid #cdcdcd;
+}
+
+.but {
+  width: 710rpx;
+  height: 100rpx;
+  color: #fff;
+  left: 20rpx;
+  letter-spacing: 12rpx;
+  border-radius: 12rpx;
+  bottom: 25rpx;
+}
+
+.nav {
+  width: 450rpx;
+  margin: 250rpx auto 0;
+  text-align: center;
+  color: #333;
+}
+
+
+.main_b {
+  width: 450rpx;
+  height: 85rpx;
+  background-color: #6bbcfd;
+  color: #fff;
+  border-radius: 12rpx;
+
+  padding: 0 40rpx;
+  box-sizing: border-box;
+
+}
+.nav_t{
+  letter-spacing: 4rpx;
+}
+
+.main {
+  width: 630rpx;
+  height: 295rpx;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius: 12rpx;
+  text-align: center;
+  position: relative;
+  top: 180rpx;
+}
+
+.main_t {
+  height: 145rpx;
+  color: #383838;
+  font-weight: 500;
+}
+
+.box {
+  width: 100%;
+  height: 395rpx;
+}
+
+.text_box {
+  margin-top: 160rpx;
+  text-align: center;
+}
+
+.main_b {
+  width: 500rpx;
+  height: 85rpx;
+  background-color: #6bbcfd;
+  color: #fff;
+  border-radius: 12rpx;
+  margin: 0 auto;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.main_Popup {
+  border: 1rpx solid #ededed;
+  border-top: none;
+  width: 500rpx;
+  height: 150rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0rpx;
+  top: 87rpx;
+  padding: 0 24rpx;
+
+}
+
+.main_Popup_i {
+  height: 75rpx;
+  color: #6d6d6d;
+  padding-left: 22rpx;
+  box-sizing: border-box;
+}
+

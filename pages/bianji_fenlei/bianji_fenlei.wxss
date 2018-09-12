@@ -1,0 +1,42 @@
+/* pages/bianji_fenlei/bianji_fenlei.wxss */
+page{
+    background-color: #f6f6f6;
+  border-top: 1rpx solid #cdcdcd;
+}
+.Label_i{
+height: 70rpx;
+width: 550rpx;
+border-radius: 12rpx;
+  overflow: hidden;
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 1rpx solid #cdcdcd;
+  margin: 0 auto 20rpx;
+}
+.Label_i_l{
+color: #333;
+ height: 70rpx;
+ display: flex;
+ width: 50%;
+ box-sizing: border-box;
+ padding-left: 20rpx;
+}
+.Label_i_r{
+ color: #fff;
+ height: 70rpx;
+ display: flex;
+ width: 50%;
+}
+.but{
+
+  width: 710rpx;
+  height: 100rpx;
+  color: #fff;
+  left: 20rpx;
+  letter-spacing: 12rpx;
+  border-radius: 12rpx;
+    bottom: 25rpx;
+}
+.Label_box{
+margin-top: 20rpx;
+}

@@ -1,0 +1,28 @@
+<!--pages/bianji_fenlei_a/bianji_fenlei_a.wxml-->
+<page>
+
+    <view style='background:url({{img}}) no-repeat center center;background-size:cover' class='box'>
+      <view class='main'>
+        <view class='fs_32 main_t d_flex_cen_cen'>选择分类</view>
+        <!-- <view class='main_b' bindtap='Popup_show'>  -->
+        <picker bindchange='bindPickerChange' value="{{index}}" range="{{array}}">
+          <view class='main_b d_flex_cen_sb fs_30' bindtap='Popup_show'>
+            <view>{{array[index]||'请选择'}}</view>
+            <view>
+              <image src='../../icons/bottm_icon.png' style='width:20rpx;height:18rpx;' />
+        </view>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- <view class='text_box'>
+      <view style='color:#333;' class='fs_32 '>- 温馨提示 -</view>
+      <view style='color:#666;' class='fs_30 m_t_20'> 手机版目前只支持简单的自定义编辑</view>
+      <view style='color:#666;' class='fs_30 m_t_5'>复杂的自定义编辑请移步电脑端</view>
+    </view> -->
+
+  <view class='fixed but d_flex_cen_cen Gradient_color fs_34' bindtap="go_i">
+    编辑分类
+  </view>
+  
+</page>

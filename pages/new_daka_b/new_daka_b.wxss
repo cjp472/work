@@ -1,0 +1,366 @@
+/* pages/new_daka/new_daka.wxss */
+page{
+  background-color: #f6f6f6;
+  border-top: 1rpx solid #ccc;
+}
+.con_view{
+  background-color: #f5f5f5;
+  width: 100%;
+}
+.bg_view{
+  width: 94%;
+  margin: 30rpx 3% 170rpx;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 18rpx;
+  box-shadow: 0 0 20rpx #ccc;
+}
+
+
+
+.title{
+  width: 100%;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #666;
+}
+.red_color{
+  color: red;
+  font-size: 20rpx;
+  margin-right: 8rpx;
+}
+.input_1{
+  font-size: 26rpx;
+  color: #666;
+  width: 95%;
+  border-bottom: 1rpx solid #cbcbcb;
+  margin: 16rpx 0 34rpx 16rpx; 
+  box-sizing: border-box;
+}
+.text_area{
+  width: 100%;
+  height: 240rpx;
+  background-color: #fafafa;
+  border: 1rpx solid #ccc;
+  padding: 14rpx;
+  font-size: 24rpx;
+  color: #666;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+.confirm {
+  width: 94%;
+  height: 100rpx;
+  color: #fff;
+  border-radius: 12rpx;
+  letter-spacing: 12rpx;
+  position: fixed;
+  bottom: 40rpx;
+  left: 3%;
+  z-index: 999;
+}
+.Gradient_color{
+  background: linear-gradient(to top,#2a9ff0,#7ac1ff );
+}
+
+.title_2{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.section{
+  width: 40%;
+  margin-left: 30%;
+  text-align: center;
+  border: 1rpx solid #ccc;
+  background-color: #f5f5f5;
+  border-radius: 12rpx;
+}
+.picker{
+  font-size: 24rpx;
+  color: #666;
+  height: 44rpx;
+  line-height: 44rpx;
+  background-repeat: no-repeat;
+  background-size: 20rpx 11rpx;
+  background-position: 95% center;
+}
+.time_view{
+  width: 95%;
+  display: flex;
+  margin: 20rpx 0 20rpx 3%;
+}
+.rili_icon{
+  width: 32rpx;
+  height: 33rpx;
+  margin: -5rpx 7% 0 5%;
+  vertical-align: middle;
+}
+.section2{
+  width: 45%;
+  text-align: left;
+  border: 1rpx solid #ccc;
+  background-color: #f5f5f5;
+  border-radius: 12rpx;
+  margin-right: 5%;
+}
+.section2:last-child{
+  margin-left: 5%;
+  margin-right: 0;
+}
+.picker2{
+  font-size: 30rpx;
+  color: #666;
+  height: 54rpx;
+  line-height: 54rpx;
+  background-repeat: no-repeat;
+  background-size: 20rpx 11rpx;
+  background-position: 95% center;
+  width: 100%;
+}
+.view_icon{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.icon_1{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+}
+
+
+
+/**打卡**/
+
+.audio_guanbi{
+  background-color: #fff;
+  padding: 20rpx 5%;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 30rpx;
+  justify-content: space-between;
+    color: #21dc81;
+    align-items: center;
+}
+.bofang{
+  width: 150rpx;
+  height: 150rpx;
+  box-sizing: border-box;
+  
+}
+/* 上传图片 */
+.img_hid{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  width: 100%;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+.img_yangshi{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10rpx;
+}
+.tianjia_tu{
+  width: 172rpx;
+  height: 172rpx;
+  font-size: 100rpx;
+  border: 1rpx solid #d6dce5;
+  display: flex;
+  color: #E1E0E0;
+  align-items: center;
+  justify-content: center;
+}
+.shangchuan_img_i{
+  border: 1rpx solid #d6dce5;
+  width: 172rpx;
+  height: 172rpx;
+}
+.shanchu_img{
+  font-size: 23rpx;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+  height: 38rpx;
+  width: 38rpx;
+   text-align: center;
+   line-height: 35rpx;  
+   position:relative;
+   left: -54rpx;
+   bottom: -18rpx;
+
+ 
+}
+.audio_guanbi_left{
+  display: flex;
+  align-items: center;
+}
+.lv{
+  width: 65rpx;
+  height: 65rpx;
+  margin-right: 50rpx;
+  margin-top: 50rpx;
+}
+.bofang_time{
+  font-size: 26rpx;
+ margin-top: 10rpx;
+ display: flex;
+ align-items: center;
+}
+.icon_box_i{
+  width: 150rpx;
+  height: 150rpx;
+  border: 1rpx solid #d6dce5;
+  margin: 0 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rpx;
+}
+.audio_box{
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+
+}
+.yuan{
+  border: 1rpx solid #d6dce5;
+   height:110rpx;
+  width: 110rpx;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.yuan_i{
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 50%;
+  background-color: red;
+}
+.audio_box_right{
+  width: 76%;
+  margin-left: 30rpx;
+}
+.audio_box{
+  display: flex;
+ box-sizing: border-box;
+ padding: 20rpx 5%;
+}
+.audio_time{
+color: red;
+font-size: 33rpx;
+}
+.audio_text{
+  font-size: 25rpx;
+  color: #707070;
+}
+.shanchu{
+  font-size: 30rpx;
+  padding: 5rpx 5rpx;
+  border: 1rpx solid red;
+  color: red;
+  background-color: #fff;
+  width: 90rpx;
+text-align: center;
+height: 45rpx;
+}
+.video_box{
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #fff;
+padding:20rpx 20rpx;
+position: relative;
+}
+.video_left{
+width: 80%;
+}
+.shanchu_video{
+  font-size: 23rpx;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+  height: 38rpx;
+  width: 38rpx;
+   text-align: center;
+   line-height: 35rpx;  
+   position:absolute;
+   right: 24%;
+   top: 40rpx;
+   z-index: 999;
+}
+
+.line_style{
+  width: 88%;
+  margin-left: 5%;
+  height: 1px;
+  background-color:#dddddd; 
+  margin-top:60rpx;
+}
+.wid8{
+  width: 94%;
+  margin: 50rpx 0 190rpx 6%;
+  height: 60rpx;
+  float: left;
+}
+.icon_img{
+  width: 98rpx;
+  height: 98rpx;
+  float: left;
+  margin-right: 10rpx;
+}
+
+
+.view_13,.view_audio{
+  width: 100%;
+  border: 1rpx solid #E1E0E0;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  position: relative;
+  background-color: #fff;
+}
+.shanchu_audio{
+  font-size: 23rpx;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+  height: 38rpx;
+  width: 38rpx;
+   text-align: center;
+   line-height: 35rpx;  
+   position:absolute;
+   right: 0;
+   top: -10rpx;
+   z-index: 999;
+}
+.icon_4{
+  width: 76rpx;
+  height: 76rpx;
+  margin-left: 12rpx;
+}
+.free-MusicProgress{
+  position: absolute;
+  width:67%;
+  right:15%;
+  bottom:49%;
+  background:#E1E0E0 ;
+}
+.total_time{
+  position: absolute;
+  right:2%;
+  bottom:37%;
+  font-size: 22rpx;
+  color: #F7553E;
+}
+.free-MusicProgress>view{
+  background:#F7553E;
+  height:2px;
+}

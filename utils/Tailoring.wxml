@@ -1,0 +1,22 @@
+<template name="Tailoring">
+  <!--裁剪-->
+  <view class="top {{isExit!=1?'':'displayNone'}}" bindtap='getImage'>
+    <image src='{{imageSrc}}' class='selectImg' />
+    <canvas canvas-id="myCanvas" style="position:absolute;top:-9999px;left:-9999px;width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;"></canvas>
+  </view>
+  <view class="wx-content-info {{isExit==1||isExit==3?'displayNone':''}}" wx:if="{{imageSrc}}">
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+      <view class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+        <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx" bindtap='getImage'></image>
+        <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+          <view class="wx-cropper-view-box">
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class='getnone' bindtap="getnone">取消</view>
+      <view class='getBtn' bindtap="getImageInfo">确认</view>
+    </view>
+  </view>
+</template>

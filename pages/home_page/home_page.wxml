@@ -1,0 +1,60 @@
+<!--pages/home_page/home_page.wxml-->
+<page>
+  <view class='header'>
+    <view class='d_flex_cen_h'>
+      <view class='header_top m_l_30' style='background:url({{img}}) no-repeat center center;background-size:cover'>
+        <image src='{{but}}' style='width:105rpx;height:105rpx' bindtap='go_url' data-url='../lunbotu/lunbotu' />
+      </view>
+      <!-- <view class='m_l_10 jia_tu'  >
+        <image src='{{img_b}}' style='width:30rpx;height: 330rpx;' mode='aspectFill' />
+      </view> -->
+    </view>
+    <view class='nav'>
+      <block wx:for='{{nav}}'>
+        <view class='nav_i fs_24 width_33 d_flex_cen_cen'>
+          <navigator hover-class='none' url='{{item.url}}' class='textalign_cen'>
+            <image src='{{item.icon}}' style='width:86rpx;height:87rpx' />
+            <view class='m_t_5'> {{item.text}}</view>
+          </navigator>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='baoma m_t_30 d_flex_cen_sb'>
+    <view class='baoma_i d_flex_cen_h' style='background:url({{BJ}}) no-repeat center center;background-size:cover' data-url='../bianji_fenlei_a/bianji_fenlei_a' bindtap='go_url'  >
+      <view style='color:#ff4343' class='fs_24 m_t_30'>- FREQUENCY -</view>
+      <view style='color:#333' class='fs_32 m_t_5 ' >宝妈随身听</view>
+      <image src='../../icons/baoma_a.png' style='width:109rpx;height:118rpx' class='m_t_60' />
+    </view>
+    <view class='baoma_i d_flex_cen_h' style='background:url({{BJ_b}}) no-repeat center center;background-size:cover'  data-url='../zhishiku/zhishiku' bindtap='go_url'  >
+      <view style='color:#ff4343' class='fs_24 m_t_30'>- KNOWLEDGE -</view>
+      <view style='color:#333' class='fs_32 m_t_5'>宝妈知识库</view>
+      <image src='../../icons/baoma_b.png' style='width:109rpx;height:118rpx' class='m_t_60' />
+    </view>
+  </view>
+  <view style='background:url({{BJ_c}}) no-repeat center center;background-size:cover' class=' footer'>
+
+    <view class='footer_i d_flex_cen_h width_50'  bindtap='go_url' data-url='../activity/activity' >
+      <view class='m_r_30'>
+        <image src='../../icons/footer_a.png' style='width:109rpx;height:118rpx' class='' />
+      </view>
+      <view class='textalign_cen'>
+        <view style='color:#ff4343' class='fs_26 '>- HOT -</view>
+        <view style='color:#333' class='fs_32 m_t_5'>热门活动</view>
+      </view>
+    </view>
+    <view class='footer_i d_flex_cen_h width_50' bindtap='go_url' data-url='../about_us_b/about_us_b'>
+      <view class='m_r_10'>
+        <image src='../../icons/footer_b.png' style='width:109rpx;height:118rpx' class='' />
+      </view>
+      <view class='textalign_cen' >
+        <view style='color:#ff4343' class='fs_26 '>- ABOUT US -</view>
+        <view style='color:#333' class='fs_32 m_t_5'>关于我们</view>
+      </view>
+    </view>
+
+  </view>
+  <view class='special' bindtap='go_login'>
+<image src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/photo.jpg' class='img_2'></image>
+</view>
+</page>

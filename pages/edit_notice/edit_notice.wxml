@@ -1,0 +1,12 @@
+<!--pages/edit_notice/edit_notice.wxml-->
+<page>
+  <view class='con_view'>
+    <view class='bg_view'>
+      <view class='title'><text class='red_color'>*</text>公告标题</view>
+      <input class='input_1' placeholder='请输入公告标题' bindinput='inputtitle'></input>
+      <view class='title'><text class='red_color'>*</text>公告详情</view>
+      <textarea maxlength='-1' class='text_area' placeholder='请输入公告详情' bindinput='inputxiangqing'></textarea>
+    </view>
+  </view>
+  <button class='confirm Gradient_color d_flex_cen_cen fs_34' bindtap='Return'>发布</button>
+</page>

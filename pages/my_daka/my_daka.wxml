@@ -1,0 +1,72 @@
+<!--pages/my_daka/my_daka.wxml-->
+<page>
+  <view class='Newly '>
+     <image src='{{img}}'  class='touxinag m_b_30'  />
+     <view class='Gradient_color Newly_but fs_32 d_flex_cen_cen m_b_40' bindtap='daka'>新建打卡</view>
+  </view>
+
+
+
+  <view class='nav Gradient_color'>
+    <view class='nav_left' data-nav='1' bindtap='changeNav'>
+      <text class="{{nav==1?'bottom_border':''}}">进行中</text>
+    </view>
+    <view class='nav_right' data-nav='2' bindtap='changeNav'>
+      <text class="{{nav==2?'bottom_border':''}}">已过期</text>
+    </view>
+  </view>
+
+  <view class="view_left {{nav==1?'':'displayNone'}}">
+    <block wx:for="{{can}}">
+      <view class='view_1' bindtap='chakan' data-courseid='{{item.id}}' data-miaoshu='{{item.subDetail}}' data-url='{{item.imageUrl}}' data-cnum='{{item.cnum}}' data-subTitle='{{item.subTitle}}' data-className='{{item.className}}'  data-wxname='{{item.wxName}}'>
+        <view class='view_1_left'>
+          <image src='https://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/index_daka_p.jpg' class='icon_1' ></image>
+         <view class='view_1_bottom' wx:if='{{item.className!="0"}}'>{{item.className}}</view>
+        </view>
+        <image src='{{item.imageUrl}}' class='icon_2'></image>
+        <view class='view_2'>
+          <view class='view_title'>{{item.subTitle}}</view>
+          <view class='view_21'>
+            <text class='name_text'>{{item.wxName}}</text>
+            <image src='../../icons/chakan.png' mode='widthFix' class='img_1'></image>
+          </view>
+          <view class='view_22'>
+            <view class='view_23'>
+              <!-- <image src='../../icons/photo.png' class='icon_3 icon_31'></image>
+              <image src='../../icons/photo.png' class='icon_3 icon_32'></image>
+              <image src='../../icons/photo.png' class='icon_3'></image> -->
+            </view>
+            已参加|{{item.cnum}}次打卡
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="view_right {{nav==2?'':'displayNone'}}">
+    <block wx:for="{{nocan}}">
+      <view class='view_1' bindtap='chakan' data-courseid='{{item.id}}' data-miaoshu='{{item.subDetail}}' data-url='{{item.imageUrl}}' data-cnum='{{item.cnum}}' data-subTitle='{{item.subTitle}}' data-className='{{item.className}}'  data-wxname='{{item.wxName}}'>
+        <view class='view_1_left'>
+          <image src='https://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/index_daka_p.jpg' class='icon_1' ></image>
+         <view class='view_1_bottom' wx:if='{{item.className!="0"}}'>{{item.className}}</view>
+        </view>
+        <image src='{{item.imageUrl}}' class='icon_2'></image>
+        <view class='view_2'>
+          <view class='view_title'>{{item.subTitle}}</view>
+          <view class='view_21'>
+            <text class='name_text'>{{item.wxName}}</text>
+            <image src='../../icons/chakan.png' mode='widthFix' class='img_1'></image>
+          </view>
+          <view class='view_22'>
+            <view class='view_23'>
+              <!-- <image src='../../icons/photo.png' class='icon_3 icon_31'></image>
+              <image src='../../icons/photo.png' class='icon_3 icon_32'></image>
+              <image src='../../icons/photo.png' class='icon_3'></image> -->
+            </view>
+            已参加|{{item.cnum}}次打卡
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</page>

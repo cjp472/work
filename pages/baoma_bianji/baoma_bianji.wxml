@@ -1,0 +1,61 @@
+<!--pages/zhishiku/zhishiku.wxml-->
+<page>
+
+
+  <view class='name  fs_32 m_b_20 shadow' style='height:165rpx;'>
+    <view>
+      <text style='color:#fb484b' class='fs_34'>*</text> 标题名称
+    </view>
+    <view class='name_b m_t_10'>
+      <input placeholder='请输入标题名称' placeholder-style='font-size:28rpx' />
+    </view>
+  </view>
+  <view class='bg_view'>
+    <view class='title'>
+      <text class='red_color'>*</text>添加录音</view>
+  
+    <!-- 音频隐藏 -->
+    <view hidden='{{audio_xianshi}}' class='audio_box'>
+      <view class='view_audio'>
+        <view class='shanchu_audio' bindtap='shan_view_audio'>X</view>
+        <image wx:if="{{isRecord==true}}" src="../../icons/play.png" class='icon_4' data-isplay="{{isRecord}}" bindtap="record_pause"></image>
+        <image wx:if="{{isRecord!=true}}" src="../../icons/pause.png" class='icon_4' data-isplay="{{isRecord}}" bindtap="record_click"></image>
+        <view class='audio_time' style='margin-left:30rpx;'>{{times1}}.{{times2}}</view>
+        <view class='audio_time' style='margin-left:50%;' bindtap='ab_on'>完成</view>
+      </view>
+    </view>
+
+    <view class='audio_guanbi' hidden='{{audio_guanbi}}'>
+      <view class='view_13'>
+        <view class='shanchu_audio' bindtap='shan_audio'>X</view>
+        <image wx:if="{{isPlay==true}}" src="../../icons/play.png" class='icon_4' data-isplay="{{isPlay}}" data-src="{{audio_src}}" bindtap="audio_pause"></image>
+        <image wx:if="{{isPlay!=true}}" src="../../icons/pause.png" class='icon_4' data-isplay="{{isPlay}}" data-src="{{audio_src}}" bindtap="audio_click"></image>
+        <view class="free-MusicProgress">
+          <view style="width:{{progress!=null?progress:0}}%;"></view>
+        </view>
+        <view class='total_time'>{{times1}}.{{times2}}</view>
+      </view>
+    </view>
+
+    <view class='view_icon'>
+      <!-- <image src='../../icons/icon4.png' class='icon_1' bindtap='yinpin' hidden='{{img_kaiguan}}'></image> -->
+      <image src='../../icons/icon2.png' class='icon_1' bindtap='audio' hidden='{{audio_kaiguan}}'></image>
+      <!-- <image src='../../icons/icon3.png' class='icon_1' bindtap='video' hidden='{{video_kaiguan}}'></image> -->
+    </view>
+
+  </view>
+  <view class='name d_flex_cen_sb fs_32 shadow' style='height:90rpx;' bindtap='go_detail'>
+    <view>
+      <text style='color:#fb484b' class='fs_34'>*</text> 录音介绍
+    </view>
+    <view>
+      <image src='../../icons/right.png' style='width:14rpx;height:24rpx;' />
+    </view>
+  </view>
+
+
+  <button class=' confirm Gradient_color d_flex_cen_cen fs_34 ' bindtap='go_i'>
+    发布
+  </button>
+
+</page>

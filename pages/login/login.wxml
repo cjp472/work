@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml-->
+<page>
+  <view class='login_bg'>
+    <image src='../../icons/logo.png' mode='widthFix' class='logo_img'></image>
+    <input class='input_1' placeholder='请输入手机号码' type='number' bindinput='changePhone'></input>
+    <input class='input_2' placeholder='请填写验证码' type='number' bindinput='changeCode'></input>
+    <view class='viewP'>
+      <view class='getNode' catchtap='getCode' hidden='{{blueBtn}}'>获取验证码</view>
+       <view class='getNode' hidden='{{grayBtn}}'>重新获取{{countDownSecond}}秒</view>
+    </view>
+    <button type='button' class='but' bindtap='dologin'>登录</button>
+  </view>
+</page>

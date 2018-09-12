@@ -1,0 +1,127 @@
+<!--pages/zhishiku/zhishiku.wxml-->
+<page>
+  <form bindsubmit="formSubmit">
+    <view class='name d_flex_cen_sb fs_32 shadow' style='height:90rpx;'>
+      <view>
+        <text style='color:#fb484b' class='fs_34'>*</text> 选择类型
+      </view>
+      <view class='name_right fs_30 ' bindtap='show'>
+        <picker bindchange='bindPickerChange' value="{{index}}" range="{{array}}">
+          <view class='d_flex_cen_cen'>- -{{array[index]}} - -
+            <image src='../../icons/bot_icon_2.png' style='width:20rpx;height:11rpx; ' class='m_l_40' /> </view>
+        </picker>
+      </view>
+
+    </view>
+    <view hidden='{{tuwen}}'>
+      <view class='name  fs_32 m_b_20 shadow' style='height:165rpx;'>
+        <view>
+          <text style='color:#fb484b' class='fs_34'>*</text> 标题名称
+        </view>
+        <view class='name_b m_t_10'>
+          <input placeholder='请输入标题名称' placeholder-style='font-size:28rpx' bindinput='inputTbiaoti' value='{{inputTbiaoti}}' />
+        </view>
+      </view>
+      <view class='name shadow' style='height:820rpx;'>
+        <view class='fs_32'>
+          <text style='color:#fb484b' class='fs_34'>*</text> 封面图片（宽高：375*196）
+        </view>
+        <view class='img_box m_b_30 d_flex_cen_cen  m_t_25'>
+
+          <block wx:for-items="{{imageList}}" wx:for-item="image">
+            <view class='img_box_i' bindtap='chooseImage'>
+              <image class='img_box_img' src='{{image}}' data-src="{{image}}"> </image>
+
+              <image src='../../icons/Close.png' hidden='{{img_show}}' catchtap='guanbi' class='Close' />
+            </view>
+          </block>
+        </view>
+        <button class='but d_flex_cen_cen fs_34 Gradient_color' bindtap='chooseImage'>{{tupiantishi}}</button>
+      </view>
+      <view class='name d_flex_cen_sb fs_32 shadow' style='height:90rpx;' bindtap='go_xiangqing'>
+        <view>
+          <text style='color:#fb484b' class='fs_34'>*</text> 图文详情
+        </view>
+        <view>
+          <image src='../../icons/right.png' style='width:14rpx;height:24rpx;' />
+        </view>
+      </view>
+    </view>
+    <view hidden='{{shipin}}'>
+      <view class='name  fs_32 m_b_20 shadow' style='height:165rpx;'>
+        <view>
+          <text style='color:#fb484b' class='fs_34'>*</text> 标题名称
+        </view>
+        <view class='name_b m_t_10'>
+          <input placeholder='请输入标题名称' placeholder-style='font-size:28rpx' bindinput='inputVbiaoti' value='{{inputVbiaoti}}' />
+        </view>
+      </view>
+      <view class='name shadow' style='height:820rpx;'>
+        <view class='fs_32'>
+          <text style='color:#fb484b' class='fs_34'>*</text> 上传视频
+        </view>
+        <view class='img_box m_b_30 d_flex_cen_cen  m_t_25'>
+          <view wx:if="{{video_src!=null}}" style='width:100%;' bindtap="video_play">
+            <video style='width:100%;' wx:if="{{curId==index}}" id="video1" src="{{video_src}}" controls='true' bindended='video_pause' class='video_view' bindpause='video_pause'></video>
+            <image style='width:100%;' wx:else src="{{video_src==null?'http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=houtia_XCX/pig_jia.png':video_poster}}" mode='widthFix' class='img_view'></image>
+          </view>
+          <image wx:if="{{video_src!=null}}" src='../../icons/other_close.png' class='close_icon2' catchtap='close_operation'></image>
+          <image style='width:100%;' wx:if="{{video_src==null}}" src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=houtia_XCX/pig_jia.png' mode='widthFix' class='img_view' bindtap='video_chuan'></image>
+        </view>
+        <button bindtap='video_chuan' class='but d_flex_cen_cen fs_34 Gradient_color'>{{video_src!=null?'更换':'上传'}}</button>
+      </view>
+    </view>
+
+    <button bindtap='jiatiaozhuan' class=' confirm Gradient_color d_flex_cen_cen fs_34 ' formType="submit">
+      发布
+    </button>
+  </form>
+  <!--裁剪-->
+  <view class="top {{isExit!=1?'':'displayNone'}}" bindtap='getImage'>
+
+    <image src='{{imageSrc}}' class='selectImg' />
+    <canvas canvas-id="myCanvas" style="position:absolute;top:-9999px;left:-9999px;width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;"></canvas>
+
+  </view>
+
+  <view class="wx-content-info {{isExit==1||isExit==3?'displayNone':''}}" wx:if="{{imageSrc}}">
+
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+      <view class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+        <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx" bindtap='getImage'></image>
+        <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+          <view class="wx-cropper-view-box">
+            <!-- <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;top:-9999px;left:-9999px;"></canvas>  -->
+            <view wx:if="{{innerAspectRadio>=1}}">
+            <view class="wx-cropper-dashed-h"></view>
+            <view class="wx-cropper-dashed-v"></view>
+            <view class="wx-cropper-line-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+            <view class="wx-cropper-point point-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+            <view class="wx-cropper-point point-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class='getnone' bindtap="getnone">取消</view>
+      <view class='getBtn' bindtap="getImageInfo">确认</view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+</page>

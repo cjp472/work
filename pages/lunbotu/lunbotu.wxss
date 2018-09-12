@@ -1,0 +1,50 @@
+/* pages/lunbotu/lunbotu.wxss */
+page{
+  background-color: #ffffff;
+}
+.img_box{
+  padding: 0 10rpx 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.Tips{
+  height: 80rpx;
+  padding-left:10rpx;
+  color: #999999;
+}
+.img_box_i{
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  width: 230rpx;
+  height: 120rpx;
+  position: relative;
+}
+.text_css{
+  
+}
+.img_box_img{
+    width: 230rpx;
+  height: 120rpx;
+}
+.img_box_j{
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  width: 230rpx;
+  height: 120rpx;
+  background-color: #fafafa;
+  border: 1rpx dotted #b7b7b7;
+  box-sizing: border-box;
+}
+.Close{
+  height:30rpx;
+  width:29rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+
+
+

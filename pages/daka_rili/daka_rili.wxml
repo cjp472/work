@@ -1,0 +1,94 @@
+<!--pages/daka_rili/daka_rili.wxml-->
+<page>
+  <view class='view_bg'>
+    <view class='view_1'>
+
+      <view class='wrap'>
+	<view>
+		<view class='date-show'>
+			<view class='lt-arrow' bindtap='lastMonth'>
+				<image src='../../icons/nextMonth.png' mode='aspectFit'></image>
+			</view>
+			{{year}}年{{month}}月
+			<view class='rt-arrow' bindtap='nextMonth'>
+				<image src='../../icons/nextMonth.png' mode='aspectFit'></image>
+			</view>
+		</view>
+	</view>
+	<view class='header'>
+		<view wx:for='{{date}}' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}<view></view></view>
+	</view>
+	<view class='date-box'>
+    <!--打过卡的日期会有红色圆圈redDay，前端只是判断力当日加上效果，后端自己加判断 -->
+		<view wx:for='{{dateArr}}' class='{{isToday == item.isToday ? "redDay" : ""}}' data-date='{{item.isToday}}'>			
+			<view class='date-head'>
+				<view>{{item.dateNum}}</view>
+			</view>
+			<!-- <view class='date-weight'>{{item.weight}}</view> -->
+		</view>
+	</view>
+</view>
+
+    </view>  
+  </view>
+
+  <view class="view_left">
+    <block wx:for="{{3}}">
+    <image src='../../icons/photo.png' style="height:{{height}}px;border-radius:{{height}}px" class='icon_3'></image>
+    <view class='view_left_1'>
+      <view class='view_left_name'>名字</view>
+      <view class='view_left_11'>10分钟前<text class='dian'>·</text>已打卡10次<text class='font_red' bindtap='delete'>删除</text></view>
+      <view class='view_left_font'>如果你无法简洁的表达你的想法，那只能说明你还不够解。如果你无法简洁的表达你的想法，那只能说明你还不够解。</view>
+      <view class='view_left_12'>
+        <!--如果只有一张图片或视频就按照下面样式排版 -->
+        <view data-id='1' bindtap="video_play" class='video_1'>
+          <video wx:if="{{curId==1}}" id="video1" src="{{video_src}}" controls='true' bindended='pause' class='video_1' bindpause="pause"></video>
+          <image wx:else src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/video_post_1.png' mode='widthFix' class='wid100'></image>
+        </view>
+        <image src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/banner.png' mode='widthFix' class='wid100'></image>
+        <!--如果图片加视频超过两个就按照下面样式排版 -->
+        <view data-id='2' bindtap="video_play" class='three_one'>
+          <video wx:if="{{curId==2}}" data-id='2' id="video2" src="{{video_src}}" controls='true' bindended='pause' style="height:{{three_height}}px;" class='three_one' bindpause="pause"></video>
+          <image wx:else src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/video_post_1.png' mode='widthFix' class='wid100'></image>
+        </view>
+        <block wx:for="{{7}}">
+        <view style="height:{{three_height}}px;" class='three_one'>
+          <image src='http://weixin.forindata.com/pushInfo/sucai/getsucai.action?fileName=zimajie/banner.png' class='wid100' mode='aspectFill'></image>
+        </view>
+        </block>
+      </view>
+      <view class='view_13'>
+        <image wx:if="{{isPlay1==true}}" src="../../icons/play.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{audio_src}}" bindtap="audio_pause"></image>
+        <image wx:if="{{isPlay1!=true}}" src="../../icons/pause.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{audio_src}}" bindtap="audio_click"></image>
+        <view class="free-MusicProgress">
+          <view style="width:{{progress1!=null?progress1:0}}%;"></view>
+        </view>
+        <view class='total_time'>{{total_time1!=null?total_time1:'00:00'}}</view>
+      </view>
+      <view class='view_14'>
+        <view class='sanjiao'></view>
+        <view class='view_14_1'><text class='view_14_left'>教师评语</text>：如果你无法简洁的表达你的想法，那只能说明你还不够解。如果你无法简洁的表达你的想法，那只能说明你还不够解。</view>
+        <view class='view_13'>
+        <image wx:if="{{isPlay1==true}}" src="../../icons/play.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{audio_src}}" bindtap="audio_pause"></image>
+        <image wx:if="{{isPlay1!=true}}" src="../../icons/pause.png" class='icon_4' data-id='1' data-isplay="{{isPlay1}}" data-src="{{audio_src}}" bindtap="audio_click"></image>
+        <view class="free-MusicProgress">
+          <view style="width:{{progress1!=null?progress1:0}}%;"></view>
+        </view>
+        <view class='total_time'>{{total_time1!=null?total_time1:'00:00'}}</view>
+      </view>
+      </view>
+      <view class='view_15'>
+        <image src='../../icons/unzan.png' wx:if="{{isZan!=true}}" class='icon_5' bindtap='dianzan'></image>
+        <image src='../../icons/zan.png' wx:if="{{isZan==true}}" class='icon_5' bindtap='undianzan'></image>赞
+        <image style='margin-left: 20rpx;' src='../../icons/pinglun.png' class='icon_5' bindtap='go_pinglun'></image><text bindtap='go_pinglun'>评论</text>
+      </view>
+      <view class='view_16'>
+        <view class='sanjiao'></view>
+        <view class='view_16_1'><image src='../../icons/lan_zan.png' class='icon_6'></image>心动，欧阳娜娜，心动，梦露，欧阳娜娜，心动，欧阳娜娜，心动梦露，欧阳娜娜</view>
+        <view class='view_16_2'><text class='view_14_left'>心动</text>：如果你无法简洁的表达你的想法，那只能说明你还不够解。如果你无法简洁的表达你的想法，那只能说明你还不够解。</view>
+        <view class='view_16_2'><text class='view_14_left'>心动</text>回复<text class='view_14_left'>欧阳娜娜</text>：如果你无法简洁的表达你的想法，那只能说明你还不够解。如果你无法简洁的表达你的想法，那只能说明你还不够解。</view>
+      </view>
+    </view>
+    </block>
+  </view>
+</page>

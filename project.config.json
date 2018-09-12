@@ -1,0 +1,287 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.3",
+	"appid": "wxeea0eab9954fc519",
+	"projectname": "%E5%90%8E%E5%8F%B0-0912-1",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 35,
+			"list": [
+				{
+					"id": -1,
+					"name": "随身听",
+					"pathName": "pages/Sound_recording/Sound_recording",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "轮播图",
+					"pathName": "pages/lunbotu/lunbotu",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "录音介绍",
+					"pathName": "pages/luyin_jieshao/luyin_jieshao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "录音编辑",
+					"pathName": "pages/luyin_bianji/luyin_bianji",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "宝妈知识库",
+					"pathName": "pages/zhishiku/zhishiku",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "宝妈知识库",
+					"pathName": "pages/zhishiku/zhishiku",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑分类",
+					"pathName": "pages/bianji_fenlei/bianji_fenlei",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑分类-1级页面",
+					"pathName": "pages/bianji_fenlei_a/bianji_fenlei_a",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "课程编辑",
+					"pathName": "pages/curriculum_bianji/curriculum_bianji",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "121",
+					"pathName": "pages/brand/brand",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "课程编辑2级页面",
+					"pathName": "pages/curriculum_bianji_i/curriculum_bianji_i",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "图文详情",
+					"pathName": "pages/edit_view/edit_view",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "热门活动",
+					"pathName": "pages/activity/activity",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打卡",
+					"pathName": "pages/my_daka/my_daka",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打卡类型选择",
+					"pathName": "pages/daka_type/daka_type",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "成长足迹",
+					"pathName": "pages/class_cricle/class_cricle",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "宝宝成长足迹",
+					"pathName": "pages/increase_CCZJ/increase_CCZJ",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关于我们1级页面",
+					"pathName": "pages/about_us_box/about_us_box",
+					"query": ""
+				},
+				{
+					"id": 18,
+					"name": "关于我们选择",
+					"pathName": "pages/about_us_box/about_us_box",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "详情版预览",
+					"pathName": "pages/about_us_b/about_us_b",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "宝妈随声听编辑",
+					"pathName": "pages/baoma_bianji/baoma_bianji",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "宝妈随声听编辑 1级页面",
+					"pathName": "pages/bianji_fenlei_a/bianji_fenlei_a",
+					"query": ""
+				},
+				{
+					"id": 22,
+					"name": "`1",
+					"pathName": "pages/home_page/home_page",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "123",
+					"pathName": "pages/luyin_bianji/luyin_bianji",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "QQ",
+					"pathName": "pages/zhishiku/zhishiku",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "QQa",
+					"pathName": "pages/about_us/about_us",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "QQaa",
+					"pathName": "pages/daka_type/daka_type",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改页面",
+					"pathName": "pages/luyin_jieshao/luyin_jieshao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "宝妈随声听",
+					"pathName": "pages/baoma_bianji/baoma_bianji",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "宝妈知识库",
+					"pathName": "pages/zhishiku/zhishiku",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "热门活动",
+					"pathName": "pages/activity/activity",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/about_us/about_us",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "精品课程",
+					"pathName": "pages/curriculum_bianji_i/curriculum_bianji_i",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "录音介绍",
+					"pathName": "pages/luyin_bianji/luyin_bianji",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "16:34",
+					"pathName": "pages/luyin_bianji/luyin_bianji",
+					"query": ""
+				},
+				{
+					"id": 35,
+					"name": "1",
+					"pathName": "pages/home_page/home_page",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评论",
+					"pathName": "pages/pinglun/pinglun",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "详情编辑",
+					"pathName": "pages/edit_view/edit_view",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/about_us/about_us",
+					"pathName": "pages/about_us/about_us",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/curriculum_bianji_i/curriculum_bianji_i",
+					"pathName": "pages/curriculum_bianji_i/curriculum_bianji_i",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/increase_CCZJ/increase_CCZJ",
+					"pathName": "pages/increase_CCZJ/increase_CCZJ",
+					"query": ""
+				}
+			]
+		}
+	}
+}

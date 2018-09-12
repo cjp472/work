@@ -1,0 +1,22 @@
+<!--pages/Sound_recording/Sound_recording.wxml-->
+<page>
+  <view class='name  fs_32 m_b_20'>
+    <view>
+      <text style='color:#fb484b' class='fs_34'>*</text> 标题名称
+    </view>
+    <view class='name_b m_t_10'> 
+      <input  placeholder='请输入标题名称'  placeholder-style='font-size:28rpx'   />
+    </view>
+  </view>
+  <view class='text d_flex_cen_sb fs_32'>
+    <view>
+      <text style='color:#fb484b' class='fs_34'>*</text> 录音介绍
+    </view>
+    <view>
+      <image src='../../icons/right.png' style='width:14rpx;height:24rpx;' />
+    </view>
+  </view>
+  <view class='fixed confirm Gradient_color d_flex_cen_cen fs_34'>
+    发布
+  </view>
+</page>

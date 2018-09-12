@@ -1,0 +1,59 @@
+<!--pages/edit_view/edit_view.wxml-->
+<!--编辑页面 -->
+  <view class='edit_detail_view'>
+    <view class='scroll_view' id="scroll_height" wx:if="{{totalsourse.length>0}}">
+      <block wx:for="{{totalsourse}}" wx:for-index="indexs" wx:for-item="items">
+        <view class='view_all'>
+          <!-- 文本-->
+          <textarea maxlength='-1' maxlength='-1' wx:if="{{items.types==1}}" placeholder='请填写内容' class='text_area' bindinput='inputtext' data-arrid='{{indexs}}' value='{{items.shuju}}'></textarea>
+          <image wx:if="{{items.types==1}}" data-types='1' data-index="{{indexs}}" src='../../icons/text_close.png' class='close_icon1' bindtap='close_operation'></image>
+
+          <!-- 图片-->
+          <view wx:if="{{items.types==2}}">
+            <view class='edit_img_view'>
+              <image src="{{items.shuju}}" mode='widthFix' class='img_view'></image>
+              <image data-types='2' data-index="{{indexs}}" data-num='{{index}}' src='../../icons/other_close.png' class='close_icon2' bindtap='close_operation'></image>
+            </view>
+          </view>
+
+          <!-- 视频-->
+          <view wx:if="{{items.types==3}}" data-id="{{indexs}}" bindtap="video_play" class="video_{{indexs}}">
+            <video wx:if="{{curId==indexs}}" id="video{{indexs}}" data-id="{{indexs}}" src="{{items.shuju}}" controls='true' bindended='pause' autoplay='true' bindpause='pause' class='video_view'></video>
+            <image wx:else src="{{video_poster}}" mode='widthFix' class='img_view'></image>
+          </view>
+          <image data-types='3' data-index="{{indexs}}" wx:if="{{items.types==3}}" src='../../icons/other_close.png' class='close_icon2' bindtap='close_operation'></image>
+
+        </view>
+      </block>
+    </view>
+    <view class='edit_button_view'>
+      <view class='change_edit_type' bindtap='choose_type'>添加内容</view>
+      <button class='edit_but' bindtap='Return'>保存</button>
+    </view>
+    <view style="height:340rpx;"></view>
+  </view>
+
+  <view class="modal-mask" wx:if="{{isEdit==true}}"></view> 
+
+  <!--选择编辑类型 -->
+  <view class='touming_bg' wx:if="{{isEdit==true}}" style="position: fixed;top: 0;left: 0;z-index:9999;">
+    <view class='edit_view'>
+      <view class='edit_icon_view'>
+        <view class='edit_icon_view_1' bindtap='choose_text' data-type='1'>
+          <image src='../../icons/edit_icon1.png' class='edit_icon'></image>
+          <view>文字</view>
+        </view>
+        <view class='edit_icon_view_1' bindtap='choose_img' data-type='2'>
+          <image src='../../icons/edit_icon2.png' class='edit_icon'></image>
+          <view>图片</view>
+        </view>
+        <view class='edit_icon_view_1' bindtap='choose_video' data-type='3'>
+          <image src='../../icons/edit_icon3.png' class='edit_icon'></image>
+          <view>视频</view>
+        </view>
+      </view>
+      <view class='edit_close_view'>
+        <image src='../../icons/edit_icon4.png' class='close_icon' bindtap='close_edit'></image>
+      </view>
+    </view>
+  </view>

@@ -1,0 +1,120 @@
+/* pages/edit_view/edit_view.wxss */
+page{
+  background-color: #f6f6f6;
+  border-top: 1rpx solid #ccc;
+}
+/**选择编辑类型**/
+.edit_view{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  height: 340rpx;
+  z-index: 99;
+}
+.edit_icon_view{
+  width: 86%;
+  margin: 30rpx 7%;
+  display: flex;
+  align-items: center;
+}
+.edit_icon_view_1{
+  width: 25%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+}
+.edit_icon{
+  width: 140rpx;
+  height: 140rpx;
+}
+.edit_close_view{
+  width: 100%;
+  text-align: center;
+}
+.close_icon{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+
+/**编辑页面***/
+.edit_detail_view{
+  background-color: #f5f5f5;
+  border-top: 1rpx solid #ccc;
+  width: 100%;
+}
+.scroll_view{
+  width: 94%;
+  margin: 30rpx 3%;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 18rpx;
+  box-shadow: 0 0 20rpx #ccc;
+
+}
+.edit_button_view{
+  width: 94%;
+  margin: 30rpx 3%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.change_edit_type,.edit_but{
+  width: 47%;
+  text-align: center;
+  background: linear-gradient(to bottom, #6fbcfd, #35a3f2);
+  color: #fff;
+  font-size: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 12rpx;
+}
+.change_edit_type{
+  margin-right: 3%;
+}
+.edit_but{
+  margin-left:3%;
+  letter-spacing: 8rpx;
+}
+.view_all{
+  width: 94%;
+  margin: 30rpx 3%;
+  box-sizing: border-box;
+  position: relative;
+}
+.text_area{
+  width: 100%;
+  border: 1rpx solid #ccc;
+  background-color: #fafafa;
+  height: 240rpx;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: #666;
+  box-sizing:border-box;
+}
+.img_view,.video_view{
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+.close_icon1{
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  width: 34rpx;
+  height: 34rpx;
+}
+.close_icon2{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 29rpx;
+  height: 30rpx;
+}
+.edit_img_view{
+  width: 100%;
+  position: relative;
+}

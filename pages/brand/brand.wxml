@@ -1,0 +1,79 @@
+<!--pages/about_us/about_us.wxml-->
+<page>
+  <view class='top'>
+    <view class='left_nav' data-nav='1' bindtap='change_nav'>
+      <text class="{{isNav==1?'active':''}}">品牌介绍</text>
+    </view>
+    <view class='right_nav' data-nav='2' bindtap='change_nav'>
+      <text class="{{isNav==2?'active':''}}">校区信息</text>
+    </view>
+  </view>
+
+  <view wx:if="{{isNav==1}}">
+    <image src='../../icons/zanwu.png' class='zanwu_img' mode='widthFix' bindtap='click_edit'></image>
+    <view class='zanwu_text'>添加丰富的信息吧~</view>
+  </view>
+
+  <view wx:if="{{isNav==2}}">
+    <view class='warn_view'>基本信息</view>
+    <map></map>
+    <block wx:for="{{shop}}">
+    <view class='shop_view'>
+      <view class='shop_view_1'>
+        <view class='view_shop_left'><text class='red_color'>*</text>门店名称</view>
+        <input class='input_1' placeholder='请输入门店名称' placeholder-placeholder-style='text-align:right;'></input>
+      </view>
+      <view class='shop_view_1'>
+        <view class='view_shop_left'><text class='red_color'>*</text>门店地址</view>
+        <input class='input_1' placeholder='请输入门店地址' placeholder-placeholder-style='text-align:right;'></input>
+      </view>
+      <view class='shop_view_1'>
+        <view class='view_shop_left'><text class='red_color'>*</text>营业时间</view>
+        <input class='input_1' placeholder='如：每周一至周五 09:00-15:00' placeholder-placeholder-style='text-align:right;'></input>
+      </view>
+      <view class='shop_view_1'>
+        <view class='view_shop_left'><text class='red_color'>*</text>联系电话</view>
+        <input class='input_1' type='number' placeholder='请输入门店联系电话' placeholder-placeholder-style='text-align:right;'></input>
+      </view>
+      <view class='tishi_view'>点击“保存”后即可同步到小程序前台</view>
+      <view class='but_view'>
+        <view class='view_but1' data-index='{{index}}' bindtap='delete_shop'>删除</view>
+        <button class='view_but2'>保存</button>
+      </view>
+    </view>
+    </block>
+
+    <view class='add_shop' bindtap='add_shop'><text style='font-size:50rpx;'>+</text> <text>新增校区</text></view>
+
+    <view class='view_1'>
+      <view class='warn_view'>基本信息</view>
+      <image src='../../icons/more.png' class='more_icon'></image>
+    </view>
+  </view>
+
+  <!--选择编辑类型 -->
+  <view class='touming_bg' wx:if="{{isEdit==true}}" style="background-image:url('../../icons/touming.png');background-repeat: repeat;width: 100%;height: 100%;position: fixed;top: 0;left: 0;">
+    <view class='edit_view'>
+      <view class='edit_icon_view'>
+        <view class='edit_icon_view_1' bindtap='choose_type' data-type='1'>
+          <image src='../../icons/edit_icon1.png' class='edit_icon'></image>
+          <view>文字</view>
+        </view>
+        <view class='edit_icon_view_1' bindtap='choose_type' data-type='2'>
+          <image src='../../icons/edit_icon2.png' class='edit_icon'></image>
+          <view>图片</view>
+        </view>
+        <view class='edit_icon_view_1' bindtap='choose_type' data-type='3'>
+          <image src='../../icons/edit_icon3.png' class='edit_icon'></image>
+          <view>视频</view>
+        </view>
+      </view>
+      <view class='edit_close_view'>
+        <image src='../../icons/edit_icon4.png' class='close_icon' bindtap='close_edit'></image>
+      </view>
+    </view>
+  </view>
+
+
+  
+</page>
